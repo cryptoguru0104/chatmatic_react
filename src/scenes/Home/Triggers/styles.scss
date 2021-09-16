@@ -1,0 +1,181 @@
+@import 'src/constants.scss';
+
+.addButtonWrapper {
+    width: 205px;
+}
+
+.triggers-page-content {
+    height: 100%;
+}
+.trigger-tbl {
+    height: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: auto;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .toolbar {
+        padding: 24px 30px;
+        .filter-bar {
+            margin: 0 1rem;
+        }
+        .dropdown-option {
+            padding: 13px;
+            border: 1px solid #DCE0E9;
+            border-radius: 10px;
+            white-space: nowrap;
+            .text {
+                min-width: 60px;
+            }
+        }
+    }
+
+    
+   
+    table {
+        font-size: 15px;
+        border: none !important;
+        thead {
+            background: rgba(243, 245, 249, 0.3);
+            tr th {
+                border-top: solid 1px #ECF0F7;
+                border-bottom: solid 1px #ECF0F7;
+                padding: 20px 30px !important;
+            }
+        }
+        tr th {
+            padding: 20px 30px !important;
+            padding-top: 0px !important;
+            background: transparent !important;
+            border-top: 0px;
+            border-bottom: 1px solid rgba(34, 36, 38, .1) !important;
+            border-right: none !important;
+            border-left: none !important;
+            color: #000 !important;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        tr.trigger-row {
+            &:hover {
+                background-color: rgba(58, 188, 13, 0.06);
+                td {
+                    color: #15205B;
+                }
+            }
+            td {
+                background: transparent !important;
+                border-top: 0px;
+                border-bottom: 1px solid rgba(34, 36, 38, .1) !important;
+                border-right: none !important;
+                border-left: none !important;
+                color: #898996 !important;
+                padding: 20px 30px !important;
+                font-size: 15px;
+                text-align: center;
+
+                &.trigger-name {
+                    text-align: left;
+                }
+
+                .subscribers-popup-link {
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: $titleColor;
+                }
+        }}
+    }
+
+    .actionTD {
+        text-align: center !important;
+    }
+    .action-button {
+        cursor: pointer;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 5px;
+        text-align: center;
+        margin: auto;
+        i {
+            margin: 0px;
+            color: #C4C4C4 !important;
+        }
+    }
+}
+
+.triggers-page {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    &-content {
+        flex-grow: 1;
+    }
+    &-right {
+        width: 400px;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        .text-block {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            & > div {
+                flex: 1;
+                flex-basis: 0;
+                overflow: hidden;
+                overflow-y: auto;
+                width: calc(100% + 20px);
+                padding-right: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+.table-content {
+    flex: 1;
+    flex-basis: 0;
+    overflow: auto;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+
+
+    .empty-section {
+        flex: 1;
+        display: flex;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+          margin-top: 20px;
+          font-size: 18px;
+        }
+
+        label {
+          color: $contentTextColor;
+          font-size: 15px;
+          margin-top: 5px;
+        }
+
+        .button-wrapper {
+          margin-top: 20px;
+          width: 200px;
+        }
+    }
+}

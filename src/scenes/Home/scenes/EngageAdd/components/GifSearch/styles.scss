@@ -1,0 +1,14 @@
+.imagefinder-container{
+    max-height: 500px;
+ .imagelist{
+     overflow-y: auto;
+     img{
+         &:hover{
+             cursor:pointer;
+         }
+     }
+     .image{
+         padding: 0px 0px 15px;
+     }
+ }   
+}

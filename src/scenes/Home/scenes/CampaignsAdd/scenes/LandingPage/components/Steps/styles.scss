@@ -1,0 +1,89 @@
+.steps-container {
+
+  .step-navbar {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
+    .step-nav {
+      &:first-of-type > a {
+        border-radius: 10px 0 0 10px;
+      }
+
+      &:last-of-type > a {
+        border-radius: 0 10px 10px 0;
+      }
+
+      & > a {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 110px;
+        min-height: 56px;
+        border-radius: 0;
+        box-shadow: none;
+
+        &.active:not([href]):not([tabindex]):hover, &.active:not([href]):not([tabindex]):focus {
+          color: white;
+        }
+
+        & > span {
+          &:first-of-type {
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 9px;
+          }
+
+          & > i {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .message-selection {
+    flex: 1;
+
+    .alert-container {
+      border: 1px solid #b1b9cc;
+      padding: 1rem 0;
+      border-radius: 0.5rem;
+
+      .warning-alert {
+        min-height: 46px;
+
+        i {
+          font-size: 2rem;
+          color: #f02727;
+        }
+      }
+
+      .success-alert {
+        i {
+          font-size: 2rem;
+          color: #17a2b8;
+        }
+      }
+
+      .btn-edit-engagement {
+        background-color: #17a2b8;
+      }
+    }
+
+    .message-list {
+      overflow: auto;
+      border: 1px solid #b1b9cc;
+      border-radius: 0.5rem;
+      flex: 1;
+      max-height: calc(100vh - 530px);
+
+      .engage-item {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

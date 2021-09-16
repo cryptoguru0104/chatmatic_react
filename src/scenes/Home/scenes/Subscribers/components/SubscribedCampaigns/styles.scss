@@ -1,0 +1,35 @@
+@import 'src/constants.scss';
+
+.campaigns-container{
+    padding: 15px 20px;
+    border-radius: 10px;
+    h2 {
+      font-size: 19px !important;
+      margin: 0 !important;
+    }
+    hr {
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+    .campaigns-info {
+        .campaigns-count {
+            label {
+                font-size: 13px;
+                font-weight: 400;
+                color: $contentTextColor;
+            }
+            span {
+                font-size: 23px;
+                font-weight: 700;
+                color: $titleColor;
+            }
+        }
+    }
+
+    .campaigns-wrapper {
+        margin-top: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        background: #F3F5F9;
+    }
+}

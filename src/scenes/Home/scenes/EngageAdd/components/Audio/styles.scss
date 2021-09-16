@@ -1,0 +1,36 @@
+.audio-container {
+  width: 266px;
+  border-radius: 18px;
+  margin-top: 26px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .upload-warning {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .delete-btn {
+    top: -25px;
+    right: -25px;
+    border-radius: 25px;
+    border: 1px solid #b1b9cd;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      border-color: firebrick;
+
+      i {
+        color: firebrick;
+      }
+    }
+
+    i {
+      font-size: 22px;
+      color: #B1B9CC;
+    }
+  }
+}

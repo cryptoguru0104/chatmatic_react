@@ -1,0 +1,14 @@
+@import 'src/constants.scss';
+
+.tags-container {
+  border-radius: 8px !important;
+  padding: 15px 20px !important;
+  h2 {
+    font-size: 19px !important;
+    margin: 0 !important;
+  }
+  hr {
+      margin-top: 10px;
+      margin-bottom: 16px;
+  }
+}

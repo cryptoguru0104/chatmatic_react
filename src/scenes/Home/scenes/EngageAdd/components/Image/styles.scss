@@ -1,0 +1,101 @@
+@import "src/constants.scss";
+
+.image-container {
+  min-height: 202px;
+  width: 100%;
+  padding: 25px 20px 20px 20px;
+  border-radius: 10px;
+  background: #f3f5f9;
+  margin-top: 26px;
+
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .upload-warning {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .image-actions{
+    padding-bottom:1rem;
+    border: 0 !important;
+   }
+
+  .image-action-btn {
+    height: 45px;
+    font-size: 14px;
+    background: #fff;
+    margin-top: 18px;
+    border-radius:6px !important;
+    color: $lightTextColor !important;
+
+    .action-icon {
+      right: 8px;
+      bottom: 11px;
+      width: 17px;
+      height: 17px;
+    }
+  }
+  .image-add-btn {
+    font-size: 17px !important;
+    color: #b1b9cd !important;
+    text-align: center;
+    padding: 12px 22px;
+    border: 0px !important;
+    background: transparent !important;
+    color: $lightTextColor;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    g {
+      fill: $lightTextColor;
+    }
+    g.stroke {
+      stroke: $lightTextColor;
+    }
+
+    &:hover {
+      border: 0;
+      outline: none;
+      color: $primaryColor !important;
+
+      g {
+        fill: $primaryColor;
+      }
+      g.stroke {
+        stroke: $primaryColor;
+      }
+    }
+  }
+
+  .delete-btn {
+    top: -25px;
+    right: -25px;
+    border-radius: 25px;
+    border: 1px solid #b1b9cd;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      border-color: firebrick;
+
+      i {
+        color: firebrick;
+      }
+    }
+
+    i {
+      font-size: 22px;
+      color: #B1B9CC;
+    }
+  }
+}
+
+.url-modal-container{
+   width:500px;
+   padding:20px;    
+}

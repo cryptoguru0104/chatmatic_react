@@ -1,0 +1,33 @@
+.page-add-container {
+  margin-top: 50px;
+  background-color: white;
+  padding: 22px 0;
+  box-shadow: 0 2px 20px 0 rgba(48, 50, 59, .15);
+  border-radius: 10px;
+
+  .btn-connect-all {
+    width: 207px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 16px;
+    color: #b1b9cd;
+    max-width: 700px;
+    text-align: center;
+    margin-top: 29px;
+    margin-bottom: 20px;
+  }
+
+  .page-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 60px 0;
+    border-top: 1px solid #E6E7EB;
+    width: 100%;
+  }
+}

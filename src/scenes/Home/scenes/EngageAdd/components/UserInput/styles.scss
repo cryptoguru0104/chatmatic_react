@@ -1,0 +1,45 @@
+.connector{
+    background: white;
+    border-left: 2px dotted #274bf0 ;
+    height:25px;                        
+    width:2px;
+    margin:0 auto;
+}
+
+.value-container{
+    width: 266px;
+    border-radius: 18px;
+    // border:1px dashed #ebebeb;
+    color:#b1b9cd;    
+    .btn-settings{
+        width: 174px;
+        height: 40px;
+        border: 1px dashed #ebebeb;
+        border-radius: 0.5rem;
+        color: #B1B9CD !important;
+        margin-bottom: 20px;
+        i{
+            margin-right:14px;
+        }
+        &:hover, &:focus, &.active {
+            border: 1px dashed #274bf0;
+            border-radius: 0.5rem;
+            color: #274bf0 !important;
+    
+            i { 
+              color: #274bf0;
+            }
+          }
+    }
+}
+.userinput-container{
+    border:1px solid #ebebeb;
+}
+
+.popover-quick-reply {
+    max-width: none !important;
+
+    span.arrow {
+        display: none;
+    }
+}

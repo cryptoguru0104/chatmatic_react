@@ -1,0 +1,221 @@
+.automation-edit-container {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    & > div:first-child {
+        padding: 24px 30px;
+        flex: 1;
+
+        .btn-back {
+            font-size: 20px;
+            color: #30323b;
+            padding: 0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .automation-edit-content {
+            flex: 1;
+
+            .left-content-wrapper {
+                flex: 7;
+                overflow: auto;
+
+                .automation-container {
+                    border: 1px solid #e6e7eb;
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+                    flex-shrink: 0;
+
+                    .automation-header {
+                        border-radius: 8px 8px 0 0;
+                        background-color: #e6e7eb;
+                        border: 1px solid #e6e7eb;
+                        min-height: 60px;
+                        padding: 0 20px;
+
+                        button {
+                            font-size: 10px;
+                        }
+
+                        input {
+                            background-color: transparent;
+                            border: none;
+                            margin-right: 20px;
+                        }
+
+                        .header-title {
+                            font-size: 18px;
+                            color: #5f5f61;
+                        }
+
+                        .subscribe-toggle {
+                            span {
+                                font-size: 10px;
+                                color: #274bf0;
+                                letter-spacing: 1px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .automation-item-container {
+                        min-height: 110px;
+                        padding: 30px 0;
+                        border-bottom: 1px solid #e6e7eb;
+
+                        .automation-field {
+                            flex: 1;
+
+                            &.border-right {
+                                border-right: 1px solid #e6e7eb;
+                            }
+
+                            p {
+                                font-size: 16px;
+                                color: #1b1c21;
+                                margin: 0;
+                            }
+
+                            small {
+                                font-size: 12px;
+                                letter-spacing: 1.2px;
+                                color: #5f5f61;
+                            }
+                        }
+                    }
+
+                    .actions-container {
+                        padding: 20px 11px;
+
+                        button {
+                            width: 190px;
+                            height: 40px;
+                            border: 1px solid #274bf0;
+                            border-radius: 8px;
+                            color: #274bf0;
+                            margin: 0 5px 5px 0;
+                            font-size: 10px;
+                        }
+                    }
+                }
+
+                .add-tag-container,
+                .notify-admin-container,
+                .trigger-integration-container {
+                    padding: 20px;
+                    border: 1px solid #e6e7eb;
+                    border-radius: 8px;
+                    color: #5f5f61;
+
+                    .css-1alnv5e {
+                        display: none;
+                    }
+
+                    .css-1492t68 {
+                        font-size: 12px;
+                    }
+
+                    .react-tagsinput {
+                        border-width: 0;
+                        max-height: 150px;
+                        overflow: auto;
+                        padding: 0;
+
+                        .react-tagsinput-tag {
+                            background-color: rgba(39, 122, 240, 0.12);
+                            border-radius: 10px;
+                            border-color: rgba(39, 122, 240, 0.12);
+                            color: #464647;
+                            font-size: 12px;
+                            text-transform: uppercase;
+
+                            .react-tagsinput-remove {
+                                margin-left: 5px;
+                            }
+                        }
+
+                        .react-tagsinput-input {
+                            //display: none;
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+                        margin-bottom: 30px;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 1px 10px;
+                        font-size: 14px;
+                        line-height: 16px;
+                        border-radius: 20px;
+                    }
+                }
+            }
+
+            .right-content-wrapper {
+                flex: 5;
+                margin-left: 30px;
+                padding: 30px;
+                background-color: #f7f8fa;
+                border-radius: 10px;
+                overflow: auto;
+                font-size: 12px;
+
+                .action-container {
+                    margin-bottom: 30px;
+
+                    p {
+                        font-size: 14px;
+                        color: #30323b;
+                        margin-bottom: 10px;
+                    }
+
+                    .tag {
+                        font-size: 12px;
+                        color: #464647;
+                        padding: 10px;
+                        background-color: rgba(39, 122, 240, 0.12);
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        min-height: 38px;
+
+                        button {
+                            color: #464647;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .automation-edit-footer {
+        min-height: 102px;
+        padding: 30px;
+        border-radius: 0 0 10px 10px;
+        border-top: 1px solid #e6e7eb;
+
+        .left-footer {
+            flex: 7;
+
+            .btn-add-automation {
+                width: 207px;
+                min-height: 40px;
+                border-radius: 8px;
+                border: 1px solid #274bf0;
+            }
+        }
+
+        .right-footer {
+            flex: 5;
+        }
+
+        .btn-delete-automation {
+            color: #5f5f61;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    }
+}

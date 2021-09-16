@@ -1,0 +1,32 @@
+@import 'src/constants.scss';
+
+.lifetimevalue-container {
+    border-radius: 8px !important;
+    flex: 1;
+    padding: 15px 20px !important;
+    height: 100%;
+    h2 {
+        font-size: 19px !important;
+        margin: 0px !important;
+    }
+    hr {
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+    .message-info-header {
+        font-size: 12px;
+    }
+    .value-info {
+        label {
+            color: $contentTextColor;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 13px;
+        }
+        span {
+            color: $greenColor;
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
+}

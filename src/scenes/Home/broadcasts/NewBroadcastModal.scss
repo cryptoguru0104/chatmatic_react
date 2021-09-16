@@ -1,0 +1,49 @@
+@import 'src/constants.scss';
+
+.broadcast-modal-container {
+  h2 {
+    text-align: center;
+  }
+  .broadcast-modal-content {
+    padding: 20px;
+    .type-item {
+      .icon-container {
+        border: 1px solid #DCE0E9;
+        border-radius: 8px;
+        height: 106px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        g {
+          fill: black;
+        }
+      }
+      .title {
+        color: $titleColor;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .desc {
+        color: $contentTextColor;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+      }
+      &.active, &:hover {
+        .icon-container {
+          border: 1px solid #BEC6D7;
+          g {
+            fill: $primaryColor;
+          }
+        }
+        .title {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}

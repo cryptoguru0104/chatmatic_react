@@ -1,0 +1,61 @@
+
+.engages-container {
+  overflow-x: hidden !important;
+  .engages-table {
+    margin-right:5px;
+    flex: 1;
+    .card-header{
+      padding:0 15px;
+      .row > div{
+        padding: .5rem 15px;
+      }
+    }
+    .engagement-list{
+      .list-group-item{
+        padding:0 15px;
+        .row > div{
+          padding:.5rem 15px;
+        }
+      }
+    }
+    .action{
+      min-width:50px;
+      width:50px;
+      flex-grow:0;
+      padding-left:0px !important;
+    }
+    & > .list-group {
+      flex: 1;
+      overflow: auto;
+    }
+    .list-group-item-action{
+      cursor:pointer;
+      .stats{
+        h4{
+          font-size:1.8rem;
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+        &>div{
+          &:first-child{
+            padding-left:0;
+          }
+          border-right:1px solid #B1B9CD;
+          padding:0 1rem;
+          &:last-child{
+            border-right:0;
+            padding-right:0;
+          }
+        }
+
+      }
+    }
+  }
+  
+  .thin-border-left {
+    border-left: 1px solid #B1B9CD;
+  }
+  .dropdown-item{
+    cursor:pointer;
+  }
+}

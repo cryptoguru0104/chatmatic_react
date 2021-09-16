@@ -1,0 +1,37 @@
+.form-group-shop-address {
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #cad1d7;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  .label-left {
+    border-right: 1px solid #E9EdF3;
+    height: 42.5px;
+    line-height: 42.5px;
+    background: #F8F9FC;//F8F9FC
+    margin-left: 0px;
+    text-align: center;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+  }
+  input {
+    border: 0px;
+  }
+  .label-right {
+    border-left: 1px solid #E9EdF3;
+    height: 42.5px;
+    line-height: 42.5px;
+    background: #F8F9FC;//F8F9FC
+    text-align: center;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+  }
+}

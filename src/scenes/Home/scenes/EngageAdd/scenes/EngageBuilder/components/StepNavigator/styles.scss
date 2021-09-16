@@ -1,0 +1,52 @@
+.steps-nav-container {
+  overflow: auto;
+
+  .step-navigator {
+    height: 100%;
+
+    .step-name {
+      padding: 0.75rem 1.25rem;
+      font-size: 14px;
+      color: #B1B9CD;
+      border: 1px solid #B1B9CD;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      display: inline-block;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+
+      &.active {
+        border-color: #274BF0;
+        background-color: white;
+        color: #274BF0;
+      }
+
+      &.orphan {
+        border-color: red;
+        color: red;
+      }
+
+      .btn-star {
+        padding: 0;
+        right: 10px;
+
+        i {
+          color: #B1B9CC;
+
+          &.active {
+            color: #eda819;
+          }
+        }
+      }
+    }
+
+    .star-message-note {
+      font-size: 10px;
+      line-height: 12px;
+      color: #5f5f61;
+    }
+  }
+}

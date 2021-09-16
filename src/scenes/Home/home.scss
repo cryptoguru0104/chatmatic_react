@@ -1,0 +1,45 @@
+.home-container {
+  position: relative;
+
+  .scenes-container {
+    // padding-right: 100px;
+    padding-right: 25px;
+
+    &.sidebar {
+      height: calc(100vh - 170px);
+      padding-bottom: 2px;
+
+      &>div {
+        margin-top: 70px;
+        height: 100%;
+
+        &>div:first-child {
+          overflow: auto;
+          height: 100%;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      // padding-left: 230px;
+      padding-left: 140px;
+    }
+    @media only screen and (max-width: 768px) {
+      overflow-y: auto;
+    }
+
+    &.no-sidebar {
+      padding-left: 100px;
+      padding-bottom: 30px;
+      height: calc(100vh - 90px) !important;
+      padding-top: 20px;
+    }
+  }
+
+  .profile-scene {
+    background: linear-gradient(0.25turn, #5f6571, #818793, #5f6571);
+    padding-top: 80px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

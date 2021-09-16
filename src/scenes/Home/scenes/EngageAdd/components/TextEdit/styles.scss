@@ -1,0 +1,40 @@
+.text-edit-container {
+  .text-message {
+    font-size: 14px;
+    color: #666;
+    line-height: 17px;
+    flex: 1;
+    overflow: hidden;
+    padding-right: 1em;
+    max-height: 35px;
+    position: relative;
+    &:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 20px;
+      background-color: #F1F0F0;
+    }
+  }
+
+  .text-message-active {
+    font-size: 14px !important;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem !important;
+    color: black;
+    border-radius: 5px !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+  }
+
+  i {
+    color: #B1B9CC;
+  }
+}

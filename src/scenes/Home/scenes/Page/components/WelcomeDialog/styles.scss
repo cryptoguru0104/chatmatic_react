@@ -1,0 +1,56 @@
+@import 'src/constants.scss';
+
+.welcome-dialog-container {
+  width: 770px;
+  padding: 72px 109px 75px 109px !important;
+  text-align: center;
+  border-radius: 10px;
+  .welcome-title {
+    color: $titleColor;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .welcome-desc {
+    font-size: 14px;
+    color: $contentTextColor;
+    font-weight: 400;
+    margin-bottom: 44px;
+    text-align: center;
+  }
+  .welcome-item-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    text-align: left;
+    svg {
+      height: 40px;
+      *[fill] {
+        fill: $primaryColor !important;
+      }
+      *[stroke] {
+        stroke: $primaryColor !important;
+      }
+    }
+    .welcome-item-content {
+      flex: 1;
+      padding-left: 25px;
+      .welcome-item-content-title {
+        color: $titleColor;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 7px;
+      }
+      .welcome-item-content-desc {
+        color: $contentTextColor;
+        font-size: 14px;
+      }
+    }
+  }
+  .btn-welcome-dialog-lets-start {
+    width: 225px;
+    height: 53px;
+  }
+}

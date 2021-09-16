@@ -1,0 +1,115 @@
+@import 'src/constants.scss';
+
+.customfieldtags-page-container {
+
+    .customfields-container {
+        background: #fff;
+        border-radius: 8px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 0 !important;
+
+        .cellType {
+            width: 100px;
+        }
+        .cellAction {
+            width: 280px;
+        }
+    }
+
+    .tags-container {
+        background: #fff;
+        border-radius: 8px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 0 !important;
+        .cellAction {
+            width: 200px;
+        }
+    }
+
+    .title-bar {
+        padding: 30px;
+
+        button{
+            text-transform: none;
+            height: 39px;
+            margin-left: 5px;
+
+            &.MuiButton-outlined {
+                color: $contentTextColor;
+                a {
+                    color: $contentTextColor !important;
+                    text-decoration: none;
+                    outline: none;
+                }
+                svg {
+                    *[fill] {
+                        fill: $contentTextColor;
+                    }
+                    *[stroke] {
+                        stroke: $contentTextColor;
+                    }
+                }
+
+                &:hover {
+                    color: $titleColor;
+                    a {
+                        color: $titleColor !important;
+                        text-decoration: none;
+                        outline: none;
+                    }
+                    svg {
+                        *[fill] {
+                            fill: $titleColor;
+                        }
+                        *[stroke] {
+                            stroke: $titleColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .table-container {
+        flex: 1;
+        flex-basis: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        .MuiTable-root {
+            .MuiTableRow-head {
+                border-top: 1px solid rgba(224, 224, 224, .5) !important;
+    
+                .MuiTableCell-head {
+                    font-size: 15px !important;
+                    font-weight: 500 !important;;
+                    color: $titleColor !important;;
+                }
+
+                th {
+                    background: transparent !important;
+                    background: #FBFCFD !important; //FBFCFD
+                }
+            }
+            .MuiTableCell-body {
+                font-size: 15px !important;
+                color: #898996 !important;
+            }
+        }
+
+        button {
+            span {
+                color: #898996 !important;
+            }
+        }
+    }
+    
+}

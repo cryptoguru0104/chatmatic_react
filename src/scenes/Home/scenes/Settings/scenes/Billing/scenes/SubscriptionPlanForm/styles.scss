@@ -1,0 +1,164 @@
+@import 'src/constants.scss';
+
+.subscription-form-container {
+
+  .MuiDialog-paper {
+    width: 599px;
+    height: 648px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+
+  .MuiDialogContent-root {
+    padding: 30px;
+  }
+  
+  .subscription-form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 13px 80px 40px 80px;
+
+    .btn-close {
+      margin-right: -60px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h4 {
+      width: 75px;
+      height: 20px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+      color: $titleColor;
+    }
+
+    .subscription-card-list{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      flex-basis: 0;
+      overflow: hidden;
+      overflow-y: auto;
+      margin-bottom: 12px;
+      
+      .subscription-card {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        height: 65px;
+        padding: 18px;
+        background: #FFFFFF;
+        border: 1px solid $borderColor;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        .subscription-card-brand {
+          background: $bgLightColor;
+          border-radius: 5px;
+          svg {
+            width: 45px;
+            height: 30px;
+          }
+        }
+        
+        .card-no {
+          margin-left: 16px;
+          font-weight: 400;
+          font-size: 15px;
+          color: $titleColor;
+          flex: 1;
+        }
+
+        .subscription-card-check {
+          svg {
+            color: $greenColor;
+          }
+        }
+      }
+    }
+
+    .new-card-button {
+      margin-bottom: 26px;
+      height: 49px;
+      background: #FFFFFF;
+      border: 1px solid $borderColor;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+      border-radius: 10px;
+    }
+
+    .form-price {
+      height: 38px;
+      font-size: 20px;
+      font-weight: 700;
+      color: $primaryColor
+    }
+
+    .per-month .per-year {
+      height: 17px;
+      font-weight: 500;
+      font-size: 13px;
+      color: $contentTextColor;
+    }
+
+    .subscription-coupon-code {
+      display: flex;
+      height: 49px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 14px;
+
+      .coupon-code {
+        border: none;
+        outline: none;
+        background: transparent;
+        flex: 1;
+      }
+
+      .valid-coupon-code {
+        border: none;
+        outline: none;
+        background: transparent;
+        flex: 1;
+        color: $thirdColor;
+      }
+
+      .invalid-coupon-code {
+        border: none;
+        outline: none;
+        background: transparent;;
+        flex: 1;
+        color: $fourColor;
+      }
+
+      .coupon-code-apply {
+        border-left: 1px solid $borderColor;
+        padding-left: 13px;
+      }
+
+      .coupon-code-apply:hover {
+        cursor: pointer;
+      }
+    }
+   
+    .subscription-btn-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn-submit {
+        width: 120px;
+        height: 48px;
+        margin-top: 35px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}

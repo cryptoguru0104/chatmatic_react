@@ -1,0 +1,67 @@
+@import 'src/constants.scss';
+
+.delay-container {
+  width: 100%;
+  border-radius: 10x;
+  margin-top: 30px;
+  border: 1px;
+  background-color: $bgColor;
+  overflow: none;
+  padding: 20px;
+
+  .delay-header {
+    color: $titleColor;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .delay-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    button.btn.btn-secondary {
+      border: 0px solid #c0c0c0 !important;
+      border-top: none !important;
+    }
+  }
+
+  .delay-footer {
+    font-size: 12px !important;
+    color: $titleColor;
+    text-align: center;
+
+    &, &:hover {
+      border: 0;
+    }
+
+    button.btn.btn-secondary {
+      border: none !important;
+    }
+  }
+
+  .delete-btn {
+    top: -25px;
+    right: -25px;
+    border-radius: 25px;
+    border: 1px solid #b1b9cd;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      border-color: firebrick;
+      cursor: pointer;
+
+      i {
+        color: firebrick;
+      }
+    }
+
+    i {
+      font-size: 22px;
+      color: #B1B9CC;
+    }
+  }
+}

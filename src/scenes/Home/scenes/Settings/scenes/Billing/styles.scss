@@ -1,0 +1,17 @@
+@import 'src/constants.scss';
+
+
+.billing-container {
+  height: 100%;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  & > div {
+    flex: 1;
+    flex-basis: 0;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}

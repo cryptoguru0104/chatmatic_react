@@ -1,0 +1,10 @@
+@media print{
+    .hide-print{
+        display:none !important;        
+    }
+}
+
+.list-group-item-action .stats > div{
+    border-right:1px solid #B1B9CD;
+    padding:0 1rem;
+}

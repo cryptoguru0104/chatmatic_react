@@ -1,0 +1,168 @@
+.templates-container {
+  padding: 0 40px;
+  height: calc(100vh - 60px);
+  position: relative;
+  top: 60px;
+}
+
+.template-container{
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  .section-header {
+    font-size: 20px;
+    padding: 15px 0;
+  }
+  .section-body {
+    height: 100%;
+  }
+}
+
+.template-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  .view-left {
+    width: 300px;
+  }
+  .view-right {
+    display: flex;
+    min-height: 100%;
+    width: calc(100% - 300px);
+    overflow: hidden;
+    padding: 30px;
+    padding-bottom: 10px;
+    .board-view {
+      border-radius: 5px;
+      background: #f8f8f8;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      .chatmatic-logo {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        opacity: 0.6;
+        width: 150px;
+      }
+      .template-name {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        font-size: 20px;
+        opacity: 0.6;
+        color: #363636;
+      }
+      .preview-button{
+        .fb-send-to-messenger {
+          position: absolute;
+          right: 15px;
+          bottom: 15px;
+          z-index: 200;
+          opacity: 0.0001;
+          width: 120px;
+          overflow: hidden;
+          height: 28px;
+          cursor: pointer;
+        }
+        .real-button {
+          z-index: 199;
+          opacity: 1;
+          position: absolute;
+          right: 15px;
+          bottom: 15px;
+          border-radius: 4px;
+          background-color: #1877f2;
+          width: 120px;
+          height: 28px;
+          color: white;
+          padding: 0 10px;
+          line-height: 28px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .template-container {
+    .item {
+      width: 50% !important;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .template-container {
+    .item {
+      width: 100% !important;
+      max-width: 500px;
+    }
+
+    .choose-sequence-box {
+      justify-content: center;
+    }
+  }
+
+  .template-view {
+    .view-left {
+      width: 100%;
+      display: flex;
+    }
+
+    .view-right {
+      width: 100%;
+      padding: 30px 0;
+    }
+  }
+}
+
+.choose-sequence-box {
+  .item {
+    width: 100% !important;
+    height: 280px;
+    padding: 0 !important;
+    cursor: pointer;
+
+    .icon-col {
+      min-height: 170px !important;
+      max-height: 170px !important;
+    }
+
+    h3.sq-title {
+      max-width: 60%;
+      width: fit-content !important;
+      height: 20px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      justify-content: left !important;
+      align-items: flex-start !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+    }
+    
+    h4.sq-description {
+      max-width: 90%;
+      width: fit-content !important;
+      color: #363636;
+      height: 20px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      justify-content: left !important;
+      align-items: flex-start !important;
+      font-size: 14px !important;
+    }
+  }
+}

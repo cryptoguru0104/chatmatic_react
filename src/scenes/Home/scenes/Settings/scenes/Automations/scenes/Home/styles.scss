@@ -1,0 +1,76 @@
+.automations-container {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  .automations-list {
+    padding: 15px;
+    flex: 1;
+    overflow: auto;
+
+    .automation-container {
+      border: 1px solid #E6E7EB;
+      border-radius: 8px;
+      min-width: 300px;
+      max-width: 400px;
+      min-height: 110px;
+      max-height: 110px;
+      margin: 15px;
+      flex: 1;
+
+      .automation-header {
+        border-radius: 8px 8px 0 0;
+        background-color: #E6E7EB;
+        border: 1px solid #E6E7EB;
+        height: 60px;
+        padding: 0 20px;
+
+        .header-title {
+          font-size: 18px;
+          color: #5f5f61;
+        }
+
+        button {
+          font-size: 10px;
+        }
+      }
+
+      .automation-item-container {
+        height: 50px;
+        border-radius: 0 0 8px 8px;
+        padding: 10px 0;
+
+        .automation-field {
+          flex: 1;
+
+          &.border-right {
+            border-right: 1px solid #E6E7EB;
+          }
+
+          p {
+            font-size: 14px;
+            color: #1b1c21;
+            margin: 0;
+          }
+
+          small {
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: #5F5F61;
+          }
+        }
+      }
+    }
+  }
+
+  .automations-footer {
+    min-height: 102px;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #E6E7EB;
+
+    .btn-add-automation {
+      width: 207px;
+      min-height: 40px;
+      border-radius: 8px;
+    }
+  }
+}

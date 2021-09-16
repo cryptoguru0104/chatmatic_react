@@ -1,0 +1,64 @@
+.smtp-builder-block {
+  height: 100%;
+  overflow-y: auto;
+  .smtp-builder-item-block {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .smtp-builder-form-block {
+    border-radius: 8px;
+    background: #F3F5F9;
+    padding: 20px;
+    padding-top: 5px;
+    margin-top: 10px;
+  }
+  .label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: DM Sans;
+    font-size: 14px;
+  }
+  .smtp-block-text {
+    .smtp-text-field {
+      height: 47px;
+      width: 100%;
+      background: #FFFFFF;
+    }
+  }
+  .smtp-select {
+    height: 47px;
+    width: 100%;
+    background: #FFFFFF;
+  }
+  .smtp-block-editor {
+    .mui-rte {
+      border-radius: 6px;
+      border: 1px solid #DCE0E9;
+      min-height: 320px;
+      padding: 10px;
+      background: #FFFFFF;
+      cursor:text;
+
+      #mui-rte-toolbar {
+        border-bottom: 1px solid #DCE0E9;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .smtp-builder-btn-save {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 53px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+.smtp-integration-icon {
+  width: auto;
+  height: 20px;
+  margin-right: 10px;
+}

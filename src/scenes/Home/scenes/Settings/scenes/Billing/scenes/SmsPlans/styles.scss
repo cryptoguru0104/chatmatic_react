@@ -1,0 +1,132 @@
+@import 'src/constants.scss';
+
+.sms-plan-container{
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 30px;
+
+
+  .title-container {
+    margin-bottom: 30px;
+    .desc {
+      font-size: 16px;
+      color: $lightTextColor;
+    }
+  }
+
+  .card-container {  
+      background: transparent !important;
+      border-radius: 0 !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+
+      .card-content {  
+          &:hover {
+  
+            .btn {
+                background-color: $primaryColor;
+                color: white;
+                border: 1px solid $primaryColor !important;
+            }
+          }
+  
+          .membership-info {
+            span {
+                &:first-child {
+                  font-size: 20px;
+                  color: $titleColor;
+                  letter-spacing: 1.25px;
+                }
+    
+                &:last-child {
+                  font-size: 20px;
+                  color: $titleColor;
+                  letter-spacing: 1px;
+                }
+            }
+          }
+  
+          .subscribers-count {
+          font-size: 1rem;
+          color: #919294;
+          line-height: 18px;
+          margin-bottom: 1.25rem;
+          span{
+              display: block;
+              color: $titleColor;
+              padding-top: 10px;
+              font-size: 14px;
+          }
+          }
+          p.subscribers-count {
+          margin-bottom: 0rem;
+          }
+  
+          .btn {
+          width: 100%;
+          height: 40px;
+          border-radius: 9px;
+  
+          &.btn-link {
+              // border: 1px solid #30323b;
+              border: 1px solid $borderColor;
+          }
+          }
+          .buy-button{
+          margin-top: 15px;
+          }
+  
+      }
+      }
+  }
+
+.user-added-cards{
+  .card {
+      display: block;
+      border: 2px solid #d2d2d2;
+      border-radius: 10px;
+      padding: 20px 25px 20px 25px;
+      font-size: 2.5rem;
+      cursor: pointer;
+      max-width: 400px;
+      margin: 10px auto;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      > div {
+          font-size: 22px;
+          letter-spacing: 3px;
+      }
+      .card-info {
+          padding-top: 15px;
+
+          .card-year {
+              color: #42465a;
+              font-size: 16px;
+          }
+          .card-brand {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: #2f52f1;
+              background-color: #edf0ff;
+              border-radius: 6px;
+              padding: 5px 12px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+          }
+      }
+  }
+}
+
+.smsPlanDetail{
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.10);
+  h3 {
+      font-size: 25px;
+      padding-bottom: 5px;
+  }
+  p {
+      font-size: 18px;
+  }
+}

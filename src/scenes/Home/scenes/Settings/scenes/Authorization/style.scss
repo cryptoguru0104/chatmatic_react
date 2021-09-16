@@ -1,0 +1,20 @@
+.authorizing-container {
+    margin-top: 150px !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .authorizing-progress {
+        display: flex;
+        height: 50px !important;
+        width: 250px;
+        .loading-bar {
+            position: relative;
+            width: 150px;
+        }
+    }
+}

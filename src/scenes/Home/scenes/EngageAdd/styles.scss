@@ -1,0 +1,102 @@
+.engage-add-container {
+  height: calc(100vh - 171px);
+  box-shadow: 0 2px 20px 0 rgba(48,50,59,0.15);
+
+  .type-left-container {
+    background-color: #f5f6fa;
+    font-size: 12px;
+
+    .flow-name-container {
+      .flow-name-input {
+        border-radius: 20px;
+        font-size: 18px;
+        color: #525f7f;
+      }
+
+      img {
+        top: 12px;
+        right: 8px;
+        font-size: 20px;
+        width: 23px;
+      }
+    }
+
+    .flow-content {
+      max-height: calc(100vh - 325px);
+      overflow: auto;
+
+      .form-check {
+        padding-left: 30px;
+
+        .form-check-input {
+          width: 20px;
+          height: 20px;
+          margin-top: 3px;
+          margin-left: -30px;
+        }
+      }
+
+      .text-description {
+        font-size: 12px;
+        color: #aaabad;
+      }
+
+      .keyword-description-container {
+        .css-15k3avv {
+          display: none;
+        }
+        .css-12jo7m5 {
+          font-size: 14px;
+        }
+
+        .option-list {
+          padding-left: .75rem;
+
+          .keyword-option {
+            margin: .5rem 0;
+
+            input {
+              width: 15px;
+              height: 15px;
+            }
+
+            .option-label {
+              font-size: 14px;
+              margin-left: .25rem;
+              margin-right: .5rem;
+            }
+
+            .option-description {
+              font-size: 12px;
+            }
+
+            .option-constraint {
+              font-weight: bold;
+              margin-left: .5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-start-building {
+      height: 40px;
+      width: 260px;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+    }
+  }
+
+  .type-right-container {
+    img {
+      width: 80px;
+      margin-bottom: 64px;
+    }
+
+    span {
+      font-size: 14px;
+      color: #5f5f61;
+    }
+  }
+}

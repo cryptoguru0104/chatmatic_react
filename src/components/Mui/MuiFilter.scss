@@ -1,0 +1,14 @@
+@import 'src/constants.scss';
+
+.filter-bar {
+  .btn-search-by {
+    background: #F8F9FB;
+    color: $contentTextColor;
+    width: 145px;
+
+    &:hover {
+      background: #F8F9FB;
+      color: $contentTextColor;
+    }
+  }
+}

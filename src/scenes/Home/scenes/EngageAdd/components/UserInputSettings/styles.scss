@@ -1,0 +1,203 @@
+.user-settings-modal-container {
+  width: 338px;
+  padding: 20px;
+
+  .action-type-container {
+    & > label {
+      font-size: 14px;
+      color: #5F5F61;
+      line-height: 1rem;
+      margin-bottom: 2px;
+    }
+
+    & > span {
+      font-size: 14px;
+      color: #5f5f61;
+      padding-left: 9px;
+      margin-bottom: 6px;
+    }
+
+    .action-types {
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+      margin-bottom: 10px;
+
+      & > label {
+        padding-left: 0;
+      }
+
+      input {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        font-size: 12px;
+        color: #30323B;
+      }
+    }
+
+    .react-phone-number-input__icon > img {
+      vertical-align: top !important;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+
+    &.tags-container {
+      .css-vj8t7z, .css-2o5izw {
+        height: 40px;
+        border-radius: 20px;
+
+        .css-1hwfws3 {
+          display: flex;
+          flex-wrap: nowrap;
+          height: 100%;
+
+          .css-1492t68 {
+            font-size: 12px;
+          }
+
+          .react-tagsinput {
+            border-width: 0;
+            max-height: 150px;
+            overflow: auto;
+
+            .react-tagsinput-tag {
+              background-color: rgba(39, 122, 240, 0.12);
+              border-radius: 10px;
+              border-color: rgba(39, 122, 240, 0.12);
+              color: #464647;
+              font-size: 12px;
+              text-transform: uppercase;
+
+              .react-tagsinput-remove {
+                margin-left: 5px;
+              }
+            }         
+          }
+        }
+
+        .css-1wy0on6 {
+          display: none;
+        }
+      }
+
+      .css-1alnv5e {
+        &:hover, &:active {
+          background-color: #e6e6e6 !important;
+          color: #30323b;
+        }
+      }
+    }
+
+    &.divider {
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+      border-top: 1px dotted #b1b9cd;
+    }
+
+    label {
+      font-size: 14px;
+      color: #5F5F61;
+      line-height: 1rem;
+      margin-bottom: 2px;
+      margin-left: 9px;
+    }
+
+    span {
+      font-size: 14px;
+      color: #B1B9CD;
+      line-height: 1rem;
+      margin-bottom: 2px;
+      margin-right: 10px;
+      &.note{
+        font-size: 11px;        
+      }
+    }
+
+    .dropdown-toggle {
+      height: 40px;
+      border: 1px solid #E6E7EB;
+      background-color: white;
+      box-shadow: none;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10px !important;
+      transform: none;
+
+      &:after {
+        color: #B1B9CC;
+      }
+    }
+
+    .dropdown-menu {
+      margin: 2px 0 0 -5px;
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 20px 0 rgba(48,50,59,.15);
+      border: 1px solid #ebebeb;
+      width: 100%;
+    }
+
+    input, .dropdown-toggle span {
+      font-size: 14px;
+      line-height: 16px;
+      color: #30323b;
+      font-weight: normal;
+    }
+
+    .show > .btn-secondary.dropdown-toggle, .dropdown-toggle:active {
+      background-color: white !important;
+      border: 1px solid #E6E7EB;
+      box-shadow: none;
+      border-radius: 20px;
+    }
+
+    .input-save-as {
+      border-radius: 20px;
+      border: 1px solid #e6e7eb;
+    }
+
+    .value-container {
+      input {
+        padding-right: 65px;
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        border: 1px solid #E6E7EB;
+        padding-left: 10px;
+        font-size: 14px;
+        color: #30323B;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .position-absolute {
+        color: #B1B9CC;
+        right: 10px;
+
+        button {
+          color: #B1B9CC;
+        }
+
+        span {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .btn-edit-message {
+    border-radius: .5rem;
+    margin-top: 4px;
+  }
+}

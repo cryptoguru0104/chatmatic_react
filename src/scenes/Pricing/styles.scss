@@ -1,0 +1,262 @@
+.pricing-container {
+    padding-top: 60px;
+    background-color: white;
+
+    .content1-container {
+        min-height: 740px;
+        padding: 75px 0 76.34px 100px;
+        background-image: linear-gradient(to bottom right, #274bf0, #6d9cd7);
+
+        .content1-left-container {
+            margin-right: 3px;
+            flex: 1;
+
+            .title {
+                font-size: 65px;
+                line-height: 77px;
+                color: #f7f8fa;
+                margin-bottom: 1.25rem;
+            }
+
+            .description {
+                padding-right: 70px;
+                font-size: 1.25rem;
+                color: #f7f7fa;
+                line-height: 31px;
+
+                &:nth-child(2) {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+
+        .img-chart {
+        }
+    }
+
+    .content2-container {
+        min-height: 409px;
+        box-shadow: 0 2px 20px 0 rgba(48, 50, 59, 0.15);
+
+        & > div {
+            width: 840px;
+
+            & > p {
+                font-size: 1.25rem;
+                color: #30323b;
+                line-height: 1.5rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .card-container {
+                min-height: 175px;
+
+                .card-content {
+                    border: 1px solid #30323b;
+                    border-radius: 10px;
+                    padding: 30px;
+                    min-width: 400px;
+                    height: 175px;
+                    margin-right: 30px;
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                    &:hover {
+                        border-color: #6f65fa;
+                        box-shadow: 0 2px 20px 0 rgba(48, 50, 59, 0.15);
+
+                        .btn {
+                            background-color: #274bf0;
+                            color: white;
+                            border-width: 0 !important;
+                        }
+                    }
+
+                    .membership-info {
+                        span {
+                            &:first-child {
+                                font-size: 1.25rem;
+                                color: #30323b;
+                                letter-spacing: 1.25px;
+                                line-height: 1.5rem;
+                            }
+
+                            &:last-child {
+                                font-size: 14px;
+                                color: #274bf0;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+
+                    .subscribers-count {
+                        font-size: 1rem;
+                        color: #919294;
+                        line-height: 15px;
+                        margin-bottom: 1.25rem;
+                    }
+
+                    .btn {
+                        width: 154px;
+                        height: 40px;
+                        border-radius: 0.5rem;
+
+                        &.btn-link {
+                            border: 1px solid #30323b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content3-container {
+        min-height: 600px;
+
+        & > div {
+            padding: 50px 108px 50px 100px;
+            min-height: 600px;
+
+            .content3-left-container {
+                z-index: 1;
+                flex: 1;
+                margin-right: 174px;
+
+                span {
+                    font-size: 40px;
+                    color: #f7f8fa;
+                    line-height: 48px;
+
+                    &:last-child {
+                        margin-top: 30px;
+                        padding-right: 123px;
+                    }
+                }
+            }
+
+            img {
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .pricing-container {
+        .content1-container {
+            padding: 50px 20px !important;
+            flex-direction: column;
+
+            .content1-left-container {
+                min-width: 350px;
+            }
+
+            & > div:last-child {
+                margin-right: -35px;
+                margin-top: 50px;
+            }
+        }
+
+        .content2-container {
+            padding: 50px 20px;
+
+            .card-container {
+                flex-direction: row;
+
+                & > .card-content {
+                    width: 100%;
+                    min-width: auto !important;
+
+                    &:last-of-type {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+
+        .content3-container {
+            & > div {
+                padding: 50px 20px;
+                margin-right: 50px;
+
+                img {
+                    width: 40vw;
+                    object-fit: contain;
+                }
+
+                & > .content3-left-container {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .content1-container {
+        padding: 50px 20px !important;
+
+        img {
+            width: calc(100vw - 20px);
+        }
+
+        .content1-left-container {
+            min-width: 300px;
+
+            .title {
+                font-size: 40px !important;
+                line-height: 48px !important;
+            }
+        }
+    }
+
+    .content2-container {
+        padding: 50px 20px;
+
+        .card-container {
+            flex-direction: column !important;
+
+            & > .card-content {
+                width: 100% !important;
+                min-width: auto !important;
+
+                &:last-of-type {
+                    margin-top: 20px !important;
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+
+    .content3-container {
+        & > div {
+            padding: 50px 20px !important;
+            flex-direction: column !important;
+            margin-right: 0 !important;
+
+            img {
+                width: calc(100vw - 30px);
+                object-fit: contain;
+            }
+
+            & > div {
+                margin-right: 0 !important;
+
+                & > span {
+                    font-size: 30px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .content1-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        .content1-left-container {
+            min-width: 0 !important;
+        }
+    }
+}

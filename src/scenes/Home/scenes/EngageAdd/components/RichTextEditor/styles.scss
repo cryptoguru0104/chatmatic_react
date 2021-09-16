@@ -1,0 +1,23 @@
+@import 'src/constants.scss';
+
+.mui-rich-texteditor-container {
+  position: relative;
+  height: 100%;
+
+  .emoji-mart {
+    position: absolute;
+    top: 0;
+    margin-top:calc(-100% + 65px);
+    left: 0;
+    z-index: 100;
+  }
+
+  .merge-tags-dropdown {
+    position: absolute;
+    width: 150px;
+    right: 0;
+    top: 30px;
+    box-shadow: none;
+    border: 1px solid #ebebeb;
+  }
+}

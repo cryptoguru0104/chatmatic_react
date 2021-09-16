@@ -1,0 +1,68 @@
+.page-connect-item {
+  width: 242px;
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid #b1b9cc;
+  margin: 20px 5px;
+  padding: 16px;
+
+  .page-name {
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 15px;
+    color: black;
+    text-align: center;
+  }
+
+  .page-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .action-container {
+    .btn-upgrade {
+      background: transparent;
+      border: 1px solid #274BF0;
+      color: #274BF0;
+    }
+
+    .badge.badge-confirmed {
+      background-color: rgba(39, 240, 39, .1);
+      border: 1px solid #27f027;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #27f027;
+      font-size: 14px;
+      width: 100px;
+      height: 40px;
+      font-weight: normal;
+      text-transform: capitalize;
+      border-radius: 8px;
+    }
+
+    .action-limit {
+      font-size: 12px;
+      line-height: 14px;
+      color: #b1b9cc;
+      margin: 10px 0 4px;
+      text-align: center;
+    }
+
+    .action-status {
+      font-size: 12px;
+      color: #274BF0;
+      line-height: 15px;
+      text-align: center;
+    }
+  }
+}

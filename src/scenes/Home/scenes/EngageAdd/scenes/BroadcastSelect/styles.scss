@@ -1,0 +1,209 @@
+.broadcast-select-container {
+  box-shadow: 0 2px 20px 0 rgba(48,50,59,0.15);
+  height: calc(100vh - 171px);
+  border-radius: 10px;
+
+  .select-left-container {
+    flex: 4;
+    background-color: #f5f6fa;
+    border-radius: 10px 0 0 10px;
+    padding: 9px 20px 24px 20px;
+
+    .condition-datepicker {
+      min-width: 200px;
+      min-height: 40px;
+      color: #5F5F61;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+
+    .name-container {
+      margin-bottom: 18px;
+
+      .name-input {
+        border-radius: 20px;
+        font-size: 14px;
+        color: #30323b;
+      }
+
+      img {
+        top: 14px;
+        right: 14px;
+        width: 18px;
+      }
+    }
+
+    .select-content-title {
+      font-size: 14px;
+      color: #30323b;
+      margin-bottom: 10px;
+    }
+
+    .select-content {
+      border-radius: 10px;
+      background-color: #edeef2;
+      padding: 1.25rem;
+      flex: 1;
+      overflow: auto;
+
+      .message-types-container {
+        .message-type {
+          margin: .5rem 0;
+          font-size: 12px;
+
+          input {
+            width: 15px;
+            height: 15px;
+          }
+
+          .type-label {
+            margin-left: .25rem;
+            margin-right: .5rem;
+            color: #30323b;
+          }
+
+          .type-description {
+            color: #919294;
+          }
+        }
+      }
+
+      .message-details-container {
+        font-size: 14px;
+
+        & > label {
+          color: #5F5F61;
+        }
+      }
+
+      .send-time-options {
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #30323b;
+
+        & > label {
+          font-size: 14px;
+          color: #5F5F61;
+        }
+
+        .send-time-option {
+          font-size: 12px;
+        }
+
+        & > span {
+          color: #919294;
+          font-size: 12px;
+        }
+      }
+
+      .conditions-container {
+        margin-top: 20px;
+        font-size: 14px;
+
+        .conditions-title {
+          color: #30323b;
+        }
+
+        .conditions-description {
+          color: #5F5F61;
+        }
+
+        .btn-add-condition {
+          width: 142px;
+          min-height: 40px;
+          border: 1px solid #274BF0;
+          border-radius: 0;
+          background-color: transparent;
+        }
+
+        .dropdown {
+          .dropdown-toggle {
+            width: 170px;
+            min-height: 40px;
+            background-color: white;
+            border: 1px solid #E6E7EB;
+            box-shadow: none;
+            font-size: 14px;
+            color: #30323b;
+          }
+
+          .dropdown-menu {
+            width: 270px;
+            box-shadow: none;
+            border: 1px solid #ebebeb;
+
+            .dropdown-item {
+              &:hover {
+                color: #274BF0;
+              }
+            }
+          }
+        }
+
+        .condition-item-container {
+          margin-bottom: 10px;
+          min-height: 40px;
+
+          .condition-item {
+            background: white;
+            border: 1px solid #E6E7EB;
+            padding: 10px;
+            font-size: 14px;
+            color: #30323b;
+            margin-right: 2px;
+            
+            .attr-value {
+              color: #30323b;
+            }
+          }
+        }
+
+        .btn-condition-item {
+          color: #30323b;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .select-right-container {
+    flex: 3;
+
+    & > div {
+      margin: 40px 50px 0 50px;
+      height: calc(100% - 40px);
+
+      p {
+        margin-top: 55px;
+        font-size: 20px;
+        color: #30323b;
+      }
+    }
+  }
+}
+
+.action-buttons-container {
+  top: -47px;
+  right: 0;
+
+  .btn {
+    width: 160px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 0;
+  }
+
+  .btn-previous {
+    border: 1px solid #b1b9cc;
+    color: #30323b;
+  }
+
+  .btn-schedule {
+    background-color: #274BF0;
+    color: white;
+  }
+
+  .subscribers-count {
+    font-size: 14px;
+    color: #30323b;
+  }
+}

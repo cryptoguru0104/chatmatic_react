@@ -1,0 +1,20 @@
+@import 'src/constants.scss';
+.html-modal-content {
+  width: 484px;
+  height: 250px;
+
+  .html-contents {
+    color: $titleColor;
+    border-radius: 10px;
+    padding: 22px;
+    background: $bgLightColor;
+  }
+
+  .btn-copy-to-clipboard {
+    border-radius: 9px;
+    height: 48px;
+    width: 186px;
+    float: right;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+.campaigns-container {
+  .campaigns-header {
+    min-height: 28px;
+  }
+
+  .campaigns-table {
+    flex: 1;
+
+    & > .list-group {
+      flex: 1;
+      overflow: auto;
+    }
+    .list-group-item-action{
+      cursor:pointer;
+    }
+  }
+}

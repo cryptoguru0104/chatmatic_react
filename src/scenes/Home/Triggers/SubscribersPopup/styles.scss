@@ -1,0 +1,105 @@
+@import 'src/constants.scss';
+
+.trigger-subscribers-popup-container {
+  background: #fff;
+  padding: 30px;
+  // margin-top: 10px;
+  width: 600px;
+  height: 500px;
+  // position: absolute;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.04), 0px 4px 44px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  // &:before {
+  //   position: absolute;
+  //   content: "";
+  //   width: 0;
+  //   height: 0;
+  //   border-style: solid;
+  //   border-width: 0 10px 10px 10px;
+  //   border-color: transparent transparent $bgColor transparent;
+  //   top: -10px;
+  //   left: 22px;
+  // }
+
+  .trigger-subscribers-popup-header {
+    margin-bottom: 5px;
+    button {
+      text-transform: none;
+      height: 39px;
+      margin-left: 5px;
+
+      &.MuiButton-outlined {
+        color: $contentTextColor;
+        a {
+          color: $contentTextColor !important;
+          text-decoration: none;
+          outline: none;
+        }
+        svg {
+          *[fill] {
+              fill: $contentTextColor;
+          }
+          *[stroke] {
+              stroke: $contentTextColor;
+          }
+        }
+
+        &:hover {
+          color: $titleColor;
+          a {
+            color: $titleColor !important;
+            text-decoration: none;
+            outline: none;
+          }
+          svg {
+            *[fill] {
+                fill: $titleColor;
+            }
+            *[stroke] {
+                stroke: $titleColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trigger-subscribers-popup-table-container {
+    flex: 1;
+    flex-basis: 0;
+    overflow: hidden;
+    overflow-y: auto;
+
+    tr {
+      td, th {
+        &:first-child {
+          width: 30px;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          text-align: center;
+        }
+        &:last-child {
+          text-align: left;
+        }
+      }
+    }
+
+    .subscriber-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 28px;
+      margin-right: 10px;
+    }
+
+    .subscriber-name {
+      font-size: 15px;
+      font-weight: 400;
+      color: $contentTextColor;
+    }
+  }
+}

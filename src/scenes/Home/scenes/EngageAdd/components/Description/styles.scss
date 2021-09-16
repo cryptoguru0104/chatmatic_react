@@ -1,0 +1,44 @@
+.description-container {
+  .description {
+    font-size: 13px;
+    color: #666;
+    line-height: 17px;
+    flex: 1;
+    overflow: hidden;
+    padding-right: 1em;
+    max-height: 35px;
+    position: relative;
+
+    border-bottom: 1px solid #E9EDF3;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    &:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background-color: white;
+    }
+  }
+
+  .description-active {
+    font-size: 12px !important;
+    padding: 0.3rem 0.5rem 1.5rem 0.5rem !important;
+    color: black;
+    border-radius: 5px !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+  }
+
+  i {
+    color: #B1B9CC;
+  }
+}

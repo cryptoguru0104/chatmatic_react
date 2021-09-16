@@ -1,0 +1,80 @@
+@import 'src/constants.scss';
+
+.select-template-container {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  & > div {
+    width: 100%;
+  }
+
+  .add-temp-top-grid {
+    button {
+      width: 200px;
+      height: 55px;
+      background: #fff;
+      color: $titleColor;
+      border-radius:10px;
+      border: 0px;
+      font-size: 15px;
+      font-weight: 400;
+      outline: none;
+
+      svg {
+        fill: $primaryColor;
+      }
+
+      &:hover {
+        background: $primaryColor;
+        color: #fff;
+        svg {
+          fill: #fff;
+        }
+      }     
+    }
+  }
+
+  .add-temp-middle-tab {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 1px;
+    padding-left: 1px;
+
+
+    .item {
+      a {
+        color: #C4C4c4 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        font-weight: 400 !important;
+        font-size: 15px !important;
+        border-radius: 0 !important;
+        padding-bottom: 7px !important;
+      }
+      &:hover {
+        a {
+          color: $titleColor !important;
+          padding-bottom: 7px;
+        }
+      }
+      &.active {
+
+        a {
+            color:$primaryColor !important;
+            border-bottom: 2px solid$primaryColor !important;
+            border-radius: 0;
+            padding-bottom: 7px;
+        }
+      }
+      &.separator {
+        background: #C4C4c4;
+        width: 1px;
+        height: 15px;
+        margin-top: 2px;
+      }
+    }
+  }
+}

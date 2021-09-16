@@ -1,0 +1,112 @@
+@import 'src/constants.scss';
+
+.cards-list-form-container {
+
+  .MuiDialog-paper {
+    width: 599px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+
+  .MuiDialogContent-root {
+  }
+  
+  .cards-list-form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+
+    .btn-close {
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h4 {
+      width: 75px;
+      height: 20px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+      color: $titleColor;
+    }
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .cards-list-card-list{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      flex-basis: 0;
+      overflow: hidden;
+      overflow-y: auto;
+      margin-bottom: 12px;
+      min-height:250px;
+      
+      .cards-list-card {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        height: 65px;
+        padding: 18px;
+        background: #FFFFFF;
+        border: 1px solid $borderColor;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        .cards-list-card-brand {
+          background: $bgLightColor;
+          border-radius: 5px;
+          svg {
+            width: 45px;
+            height: 30px;
+          }
+        }
+        
+        .card-no {
+          margin-left: 16px;
+          font-weight: 400;
+          font-size: 15px;
+          color: $titleColor;
+          flex: 1;
+        }
+
+        .cards-list-card-check {
+          svg {
+            color: $greenColor;
+          }
+        }
+      }
+    }
+
+    .new-card-button {
+      margin-bottom: 26px;
+      height: 49px;
+      background: #FFFFFF;
+      border: 1px solid $borderColor;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+      border-radius: 10px;
+    }
+   
+    .cards-list-btn-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn-submit {
+        width: 120px;
+        height: 48px;
+        margin-top: 15px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}

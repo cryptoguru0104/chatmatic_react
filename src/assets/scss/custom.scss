@@ -1,0 +1,17 @@
+.color-picker {
+    input {
+        width: 48px !important;
+        height: 48px !important;
+        flex: 0 0 auto !important;
+        padding: 8px !important;
+    }
+}
+
+
+.whitelist-url {
+    border: none !important;
+    background-color: #e8e8e8 !important;
+    border-radius: 5px !important;
+    padding: 3px !important;
+    width: fit-content !important;
+}

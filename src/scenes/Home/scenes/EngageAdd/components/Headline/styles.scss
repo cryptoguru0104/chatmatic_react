@@ -1,0 +1,27 @@
+.headline-container {
+  .headline {
+    font-size: 14px;
+    color: black;
+    line-height: 18px;
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: 1px solid #E9EDF3;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .headline-active {
+    font-size: 14px !important;
+    padding: 0.5rem 80px 0.5rem 0.5rem;
+    color: black;
+    border-radius: 5px !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+  }
+
+  i {
+    color: #B1B9CC;
+  }
+}

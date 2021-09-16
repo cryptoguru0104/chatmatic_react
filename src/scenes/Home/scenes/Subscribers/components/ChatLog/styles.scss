@@ -1,0 +1,27 @@
+@import 'src/constants.scss';
+
+.chatlog-container {
+    border-radius: 8px !important;
+    padding: 15px 20px !important;
+    height: 100%;
+    .message-info-header {
+        font-size: 13px;
+    }
+    hr {
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+    .message-info {
+        label {
+            color: $contentTextColor;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 13px;
+        }
+        span {
+            color: $titleColor;
+            font-size: 23px;
+            font-weight: 700;
+        }
+    }
+}

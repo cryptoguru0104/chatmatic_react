@@ -1,0 +1,77 @@
+
+.dialog-integration-container {
+    background: #fafafa;
+    font-family: DM Sans !important;
+  
+    .title {
+      font-size: 32px;
+    }
+  
+    .integration-item-form-container {
+      border-radius: 10px;
+      border: 1px solid #DCE0E9;
+      background: #FFFFFF;
+      padding: 20px;
+
+      h5 {
+        line-height: 35px;
+      }
+  
+      ul.guide {
+        padding-left: 16px;
+        li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  
+    .integration-item-benefits-container {
+      border-radius: 10px;
+      border: 1px solid #DCE0E9;
+      background: #FFFFFF;
+      padding: 4px;
+  
+      h5 {
+        line-height: 35px;
+  
+        .icon-title {
+          float: left;
+          width: 35px;
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+  
+      .benefits {
+        list-style-type: none;
+        padding: 10px;
+        padding-left: 0px;
+  
+        li {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          position: relative;
+          padding-left: 30px;
+          
+          svg {
+            position: absolute;
+            left: 0px;
+            top: 5px;
+            color: rgb(44, 183, 127);
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  
+    .dialog-actions {
+      text-align: right;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  
+      button {
+        margin-left: 10px;
+      }
+    }
+  }

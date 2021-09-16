@@ -1,0 +1,113 @@
+@import 'src/constants.scss';
+
+.widget-modal-title {
+  h2 {
+    font-family: DM Sans, sans-serif;
+    font-size: 22px;
+  }
+}
+.dialog-widget-container {
+
+  .api-list {
+    margin-bottom: 20px;
+    list-style-type: none;
+    padding: 0px;
+
+    li {
+      float: left;
+      padding-left: 42px;
+      padding-right: 12px;
+      height: 44px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      line-height: 44px;
+      position: relative;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #F3F5F9;
+      background: #F3F5F9;
+      font-family: DM Sans, sans-serif;
+
+
+      &:hover {
+        border: 1px solid #DCE0E9;
+        background: #FFFFFF;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 12px;
+        position: absolute;
+      }
+
+      .icon-info {
+        margin-left: 12px;
+        margin-top: 12px;
+        float: right;
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.dialog-widgets-list-container {
+  .widget {
+    text-align: center;
+    font-size: 16px;
+    font-family: DM Sans, sans-serif;
+    width: 100%;
+    padding: 10px;
+
+    .widget-image {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #E9EDF3;
+      background: #FFFFFF;
+      text-align: center;
+      padding-top: 50px; padding-bottom: 50px;
+      margin-bottom: 12px; 
+      
+      
+      g {
+        fill: $contentTextColor;
+      }
+      g.stroke {
+        stroke: $contentTextColor;
+      }
+    }
+
+    &:hover {
+      .widget-image {
+        background: #F3F5F9;
+        g {
+          fill: $titleColor;
+        }
+        g.stroke {
+          stroke: $titleColor;
+        }
+      }
+    }
+
+    &.active {
+      .widget-image {
+        background: #3350EE;
+        border: 1px solid #3350EE;
+        
+
+      
+        g {
+          fill: #fff;
+        }
+        g.stroke {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}

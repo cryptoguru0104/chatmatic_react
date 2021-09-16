@@ -1,0 +1,49 @@
+@import 'src/constants.scss';
+
+.select-page-dialog-container {
+  padding: 20px;
+  .select-page-dialog-title {
+    font-size: 20px;
+    color: $titleColor;
+    font-weight: 500;
+    margin-left: 10px;
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  .select-page-dialog-modal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0px 20px 0px !important;
+    margin-left: 35px !important;
+    margin-right: 35px !important;
+    border-top: 1px solid #EFEFEF;
+    margin-bottom: 15px;
+    .d-flex {
+      display: flex;
+      margin-top: 5px;
+      justify-content: space-between;
+      button {
+        color: #15205B;
+        font-size: 15px;
+        margin: 5px;
+        width: 250px;
+        border-radius: 9px;
+        height: 45px;
+        background-color: #fff !important;
+        Svg {
+          margin-right: 10px;
+        }
+      }
+      
+    }
+    p {
+      font-size: 14px;
+      text-align: left;
+      font-weight: 400;
+      color: $contentTextColor;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.engage-builder-container {
+  min-height: calc(100vh - 171px);
+  box-shadow: 0 2px 20px 0 rgba(48,50,59,0.15);
+  height: calc(100vh - 171px);
+
+  .builder-left-container {
+    background-color: #f5f6fa;
+    font-size: 14px;
+
+    .flow-name-container {
+      .flow-name-input {
+        border-radius: 20px;
+        font-size: 18px;
+        color: #525f7f;
+      }
+
+      img {
+        top: 12px;
+        right: 8px;
+        font-size: 20px;
+        width: 23px;
+      }
+    }
+
+    .btn-add-sequencing {
+      border: 1px solid #b1b9cd;
+      margin-bottom: 1.25rem;
+      border-radius: 8px;
+      font-weight: 400 !important;
+    }
+
+    .engage-info-container {
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed rgba(48,50,59,0.15);
+
+      img {
+        vertical-align: baseline;
+        padding-right: 3px;
+      }
+
+      i {
+        font-size: 21px;
+        vertical-align: bottom;
+      }
+
+      .keywords-options-container {
+        margin: 0 1rem;
+        padding-bottom: 1rem;
+
+        .css-15k3avv {
+          display: none;
+        }
+        .css-12jo7m5 {
+          font-size: 14px;
+        }
+
+        .options-container {
+          padding-bottom: 1rem;
+          min-height: 35px;
+
+          .form-check-label {
+            margin-right: 20px;
+
+            .form-check-input {
+              position: relative;
+              margin-left: 0;
+              margin-top: .2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .builder-right-container {
+    padding: 0 2rem 2rem;
+
+    .step-name {
+      height: 56px;
+      max-width: 200px;
+
+      input {
+        border: 0;
+        color: #30323b;
+      }
+
+      img {
+        border: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+}
+
+.action-buttons-container {
+  top: -47px;
+  right: 0;
+
+  .btn {
+    width: 140px;
+    height: 40px;
+    border: 1px solid #b1b9cc;
+    color: #30323b;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 8px;
+  }
+
+  .btn-save {
+    background-color: #e6e7eb;
+  }
+}
+
+.popover-inner {
+  .tags-container {
+    .css-xwjg1b {
+      border-radius: 10px;
+    }
+
+    .css-1alnv5e {
+      border-radius: 10px;
+    }
+  }
+}

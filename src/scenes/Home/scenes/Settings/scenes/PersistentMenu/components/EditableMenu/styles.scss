@@ -1,0 +1,56 @@
+.menu-name-container {
+  border: 1px solid #B1B9CC;
+  min-height: 48px;
+  border-top: none;
+
+  &.first {
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid #B1B9CC;;
+  }
+
+  .name {
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 17px;
+    color: black;
+    line-height: 20px;
+    border: none;
+    text-align: center;
+    outline: none !important;
+  }
+
+  .name-active {
+    font-size: 17px !important;
+    margin: 0.5rem 75px 0.5rem 0.5rem;
+    color: #274BF0;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    text-align: center;
+    outline: none !important;
+  }
+
+  .toolbox-container {
+    margin: 0 14px;
+
+    button {
+      color: #B1B9CC;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    & > span {
+      margin-left: 10px;
+      font-size: 10px !important;
+      line-height: 12px;
+      margin-bottom: 3px;
+    }
+  }
+
+  i {
+    color: #B1B9CC;
+  }
+}

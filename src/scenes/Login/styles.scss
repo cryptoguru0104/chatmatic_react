@@ -1,0 +1,133 @@
+.login-scene {
+  padding-top: 60px;
+  height: 100vh;
+  background: url('../../assets/images/login/bkg-icons.png') no-repeat;
+
+  .login-container {
+    height: calc(100vh - 60px);
+
+    .login-left-container {
+      flex: 1;
+      margin-top: 158px;
+    }
+
+    .login-form {
+      border: 1px solid #B1B9CD;
+      border-radius: 10px;
+      background-color: white;
+      padding: 60px 63px 30px 62px;
+      margin: 30px;
+      text-align: center;
+      align-items: center;
+
+      span {
+        font-size: 1.25rem;
+        color: #30323b;
+        letter-spacing: 1.25px;
+        line-height: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .btn-login {
+        width: 254px;
+        height: 50px;
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        background-color: #4267B2;
+        font-family: Helvetica, Arial, sans-serif;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        img {
+          width: 24px;
+          margin: 8px 20px 8px 8px;
+        }
+      }
+    }
+
+    .login-right-container {
+      background: url('../../assets/images/login/background.png') no-repeat;
+      background-size: cover;
+      height: calc(100vh - 60px);
+      max-width: 690px;
+
+      .official-release {
+        height: 60px;
+        background-color: white;
+        box-shadow: 0 2px 20px 0 rgba(48, 50, 59, .15);
+        margin-left: 1px;
+
+        button {
+          padding: 9px 20px;
+          border-radius: 0;
+          border: 2px solid #274BF0;
+          font-size: 14px;
+          color: #30323b;
+          letter-spacing: 0.88px;
+          line-height: 17px;
+        }
+      }
+
+      .message-content {
+        padding: 0 37px 28px 61px;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+
+        .note-message {
+          color: #30323b;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .login-container {
+      .login-right-container {
+        max-width: 100%;
+
+        .official-release {
+          height: auto;
+
+          .btn-official-release {
+            margin: 20px 0;
+          }
+        }
+
+        .message-content {
+          padding: 30px;
+
+          .note-message {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 0;
+          }
+
+          .text-primary {
+            font-size: 20px;
+            line-height: 36px;
+          }
+
+          .login-form {
+            margin: 30px 0 0 0;
+            padding: 30px;
+
+            & > span {
+              margin-bottom: 40px;
+            }
+
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

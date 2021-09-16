@@ -1,0 +1,73 @@
+@import 'src/constants.scss';
+
+.home-container {
+  .scenes-container {
+    
+    .settings-scene {
+      height: 100% !important;
+      // min-height: calc(100vh - 145px);
+      padding: 15px;
+
+      .tab-content {
+        flex: 1;
+        flex-basis: 0;
+
+        .tab-pane {
+          height: 100%;
+
+          & > div {
+            height: 100%;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      nav {
+        border: 0;
+        background: #fff;
+        border-radius: 8px 8px 0px 0px;
+        margin-bottom: 10px;
+
+
+        .nav-item {
+          padding-left: 10px;
+          padding-right: 10px;
+          background: transparent;
+
+          a {
+            font-size: 15px;
+            color: $contentTextColor;
+            border: 0px;
+            background: transparent;
+            border-radius: 0;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            line-height: 23px;
+
+            &:hover {
+              color: $titleColor;
+              border: 0px;
+              background: transparent;
+              border-radius: 0;
+            }
+
+            &.active {
+              color: $primaryColor;
+              border: 0px;
+              background: transparent;
+              border-top: 1px solid $primaryColor;
+              border-radius: 0;
+            }
+          }
+
+          .separator {
+            width: 1px;
+            height: 15px;
+            background:#C4C4C4;
+            margin-top: 29px;
+          }
+        }
+      }
+    }
+  }
+}

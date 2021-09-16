@@ -1,0 +1,87 @@
+@import 'src/constants.scss';
+
+.toolbox-items-container {
+  padding-top: 10px;
+  // border-top: 1px dashed #b1b9cd;
+  padding-right: 20px;
+  padding-left: 16px;
+
+  p.small {
+    color: $secondaryTitleColor;
+    font-weight: 500;
+    font-size:16px;
+  }
+
+  .toolbox-item {
+    margin: 6px 2px 6px 2px;
+    width: calc(20% - 4px);
+    border-radius: 10px;
+    cursor: pointer;
+
+    .icon-container {
+      width: 100%;
+      height: 62px;
+      border-radius: 8px;
+      background: $bgColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      g {
+        fill: $contentTextColor;
+      }
+      g.stroke {
+        stroke: $contentTextColor;
+      }
+    }
+
+    &:hover {
+      .icon-container {
+        background: $primaryColor;
+  
+        g {
+          fill: #ffffff;
+        }
+        g.stroke {
+          stroke: #ffffff;
+        }
+      }
+
+      span {
+        color:$primaryColor;
+      }
+    }
+
+    img {
+      width: 54px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    span {
+      font-size: 11px;
+      color: $contentTextColor;
+      margin-top: 7px;
+      font-weight: 500;
+    }
+
+    &.disable{
+      opacity: 0.3;
+      &:hover{
+        cursor: not-allowed;
+      }
+      img{
+        &:hover{
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.popover-container {
+  max-width: 338px !important;
+  border-radius: 10px;
+}

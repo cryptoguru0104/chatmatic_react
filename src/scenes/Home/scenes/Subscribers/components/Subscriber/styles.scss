@@ -1,0 +1,57 @@
+@import 'src/constants.scss';
+
+.subscriber-container {
+  flex-shrink: 0;
+  height: 92px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-top: 1px solid #EDEDED;
+  padding:15px 30px;
+  .subscriber-photo-wrapper {
+    position: relative;
+  }
+  .subscriber-photo {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &.active {
+    // background-color: rgba(39, 122, 240, .12);
+    background-color: #F7F8FB;
+    
+  }
+
+  &:nth-of-type(1) {
+    border-top: none;
+  }
+
+  .subscriber-name {
+    font-size: 16px;
+    line-height: 19px;
+    color: $titleColor;
+    font-weight: 500;
+  }
+
+  .subscriber-sex {
+    font-size: 14px;
+    line-height: 13px;
+    text-transform: capitalize;
+    color: rgba(48,50,59,0.5);
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+
+  img {
+    object-fit: contain;
+    :first-child {
+      width: 40px;
+    }
+  }
+
+  .subscriber-info {
+    right: 5px;
+    top: -5px;
+    width: 29px;
+  }
+}

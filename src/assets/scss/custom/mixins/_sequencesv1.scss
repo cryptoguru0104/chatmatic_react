@@ -1,0 +1,208 @@
+// Flexbox interpolation 
+
+
+@mixin flex($properties) {
+    @if $properties == 'flex' {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    } @else if $properties == 'inline-flex' {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+    } @else if $properties == 'inline-block' {
+        display: inline-block;
+    } @else if $properties == 'block' {
+        display: block;
+  } @else if $properties == 'none' {
+        display: none;
+  } @else if $properties == 'list-item' {
+        display: list-item;
+    }
+  }
+  
+  // Usage
+  
+  // @include flex(flex);
+  
+  @mixin flex-direction($properties) {
+    -webkit-flex-direction: $properties;
+    -ms-flex-direction: $properties;
+    flex-direction: $properties;
+  }
+  
+  // Usage 
+  
+  // @include flex-direction();
+  
+  
+  @mixin flex-wrap($properties) {
+    @if $properties == 'nowrap' {
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    } @else if $properties == 'wrap' {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    } @else if $properties == 'wrap-reverse' {
+        -webkit-flex-wrap: wrap-reverse;
+        -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    }
+  }
+  
+  // Usage 
+  
+  // @include flex-wrap(wrap);
+  
+  
+  @mixin justify($properties) {
+    @if $properties == 'flex-start' {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    } @else if $properties == 'flex-end' {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    } @else if $properties == 'center' {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    } @else if $properties == 'space-between' {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    } @else if $properties == 'space-around' {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+  }
+  
+  // Usage 
+  
+  // @include justify(center);
+  
+  @mixin align-items($properties) {
+    @if $properties == 'flex-start' {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    } @else if $properties == 'flex-end' {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    } @else if $properties == 'center' {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    } @else if $properties == 'baseline' {
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    } @else if $properties == 'stretch' {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+  }
+  
+  // Usage 
+  
+  // @include align-items(center);
+  
+  @mixin align-self($properties) {
+    @if $properties == 'auto' {
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    } @else if $properties == 'flex-start' {
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    } @else if $properties == 'flex-end' {
+        -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+    } @else if $properties == 'center' {
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+    } @else if $properties == 'baseline' {
+        -webkit-align-self: baseline;
+        -ms-flex-item-align: baseline;
+        align-self: baseline;
+    } @else if $properties == 'stretch' {
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+  }
+  
+  // Usage 
+  
+  //  @include align-self (flex-start);
+    
+    // Transition Mixin
+    
+    @mixin transition($transiton) {
+    -webkit-transition: $transiton;
+    -moz-transition: $transiton;
+    -ms-transition: $transiton;
+    -o-transition: $transiton;
+    transition: $transiton;
+    }
+    
+    // Usage 
+    
+    // @include transition(all 0.5s);
+    
+    // Padding And Margin Mixin
+    
+    @mixin margin-padding($m-direction, $m-amount, $p-direction, $p-amount) { //  ================================================================= Use this
+    @if $m-direction == all {
+      margin: $m-amount;
+    } @else {
+      margin-#{$m-direction}: $m-amount;
+    }
+    @if $p-direction == all {
+      padding: $p-amount;
+    } @else {
+      padding-#{$p-direction}: $p-amount;
+    }
+    }
+    
+    // Uage 
+    
+    // @include margin-padding(all, 0 0 0 0, all, 0 0 0 0);
+    // @include margin-padding(all, 0 0 0 0, all, null);
+  
+      // Font size and line height mixin
+    
+      @mixin font-rem($font-size, $line-height: 0) {  //  ================================================================= Use this
+        // font-size: $font-size;
+        font-size: ($font-size / $rem-base-font) * 1rem;
+        @if ($line-height > 0) {
+            // line-height: $line-height;
+            line-height: ($line-height / $rem-base-font) * 1rem;
+        }
+    }
+    
+    // Usage
+    
+    // @include font-rem(14px, 24px);
+  
+    // Border Radius Mixin
+    
+      @mixin border-radius($pixel...) {
+        border-radius: $pixel;
+        -moz-border-radius: $pixel;
+        -webkit-border-radius: $pixel;
+        -ms-border-radius: $pixel;
+    }
+    
+    // Usage
+    
+    // @include border-radius(10px 5px 20px 10px);

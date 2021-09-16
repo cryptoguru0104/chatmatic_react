@@ -1,0 +1,54 @@
+@import 'src/constants.scss';
+
+.summary-container {
+  border-radius: 8px !important;
+  padding: 15px 20px;
+  flex: 1;
+
+  h2 {
+    font-size: 19px !important;
+    margin: 0 !important;
+  }
+
+  hr {
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+
+  .summary-content {
+    flex: 1;
+    flex-basis: 0;
+    overflow-y: auto;
+    min-height: 200px;
+    
+    svg {
+      margin-right: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      margin-bottom: 9px;
+
+      .input-group-prepend {
+        width: 120px;
+        .input-group-text {
+          border: 0 !important;
+          color: $titleColor;
+          padding: 0px;
+          font-size: 13px !important;
+        }
+      }
+
+      input {
+        flex: 1;
+        border: 1px solid $borderColor;
+        outline: none !important;
+        border-radius: 10px;
+        padding: 5px;
+      }
+    }    
+  }
+}

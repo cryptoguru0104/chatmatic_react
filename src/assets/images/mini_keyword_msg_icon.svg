@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>keyword message icon mini</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Build-Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-500.000000, -224.000000)">
+        <g id="Top" transform="translate(220.000000, 130.000000)" fill="#27D9F0">
+            <g id="step-2" transform="translate(280.000000, 20.000000)">
+                <g id="Keyword-Messages" transform="translate(0.000000, 70.000000)">
+                    <g id="keyword-message-icon-mini" transform="translate(0.000000, 4.000000)">
+                        <path d="M1,8 L2,6 L2,3.33333333 C2,1.86066667 3.194,0.666666667 4.66666667,0.666666667 C6.13933333,0.666666667 7.33333333,1.86066667 7.33333333,3.33333333 L7.33333333,6 L8.33333333,8 L1,8 L1,8 Z M4.66666667,9.33333333 C4.23166667,9.33333333 3.86566667,9.05433333 3.728,8.66666667 L5.60533333,8.66666667 C5.46766667,9.05433333 5.10166667,9.33333333 4.66666667,9.33333333 L4.66666667,9.33333333 Z M8,6 L8,3.33333333 C8,1.49266667 6.50733333,0 4.66666667,0 C2.826,0 1.33333333,1.49266667 1.33333333,3.33333333 L1.33333333,6 L0,8.66666667 L3.03366667,8.66666667 C3.188,9.42733333 3.86033333,10 4.66666667,10 C5.473,10 6.14533333,9.42733333 6.29966667,8.66666667 L9.33333333,8.66666667 L8,6 L8,6 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

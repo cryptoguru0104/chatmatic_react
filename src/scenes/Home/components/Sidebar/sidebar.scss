@@ -1,0 +1,183 @@
+@import 'src/constants.scss';
+
+.sidebar-container {
+  width: 126px;
+
+  ul.sidebar-menu-container {
+    .pn-img {
+      width: 45px;
+      height: 45px;
+      margin: auto;
+      border-radius: 100%;
+      overflow: hidden;
+
+      img, svg{
+          max-width: 100%;
+          width: 45px;
+          height: 45px;
+      }
+    }
+
+    h4 {
+      font-size: 15px !important;
+    }
+
+    .list-group-item {
+      margin-bottom: 0 !important;
+      padding: 0px;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+
+
+      small {
+        color: $lightTextColor !important;
+        font-size: 13px !important;
+        font-weight: 500;
+      }
+
+      svg {
+        *[fill] {
+          fill: $lightTextColor !important;
+        }
+        *[stroke],*[stroke-width] {
+          stroke: $lightTextColor !important;
+        }
+      }
+
+      &.active {
+        small {
+          color: $primaryColor !important;
+        }
+
+        svg {
+          *[fill] {
+            fill: $primaryColor !important;
+          }
+          *[stroke],*[stroke-width] {
+            stroke: $primaryColor !important;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-browse-pages {
+    width: 100%;
+    height: 33px;
+    border: 1px solid #DDDDDD;
+    cursor: pointer;
+    border-radius: 7px;
+    padding-top: 2px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+
+    i {
+      color: #000 !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+
+    /* Our sidebar item styling */
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+
+  /* Change color on hover */
+  .bm-item:hover {
+    color: white;
+  }
+
+  /* The rest copied directly from react-burger-menu docs */
+
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: relative;
+    width: 30px;
+    height: 25px;
+    left: 25px;
+    top: 10px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #373a47;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #f7f8fa;
+    font-size: 1.15em;
+  }
+
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #f7f8fa;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: #b8b7ad;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .bm-menu-wrap {
+    width: 200px;
+    z-index: 1040 !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bm-burger-button {
+    display: none;
+  }
+
+  .bm-morph-shape {
+    display: none;
+  }
+
+  .bm-menu-wrap {
+    position: absolute !important;
+    transform: translate3d(-0%, 0px, 0px) !important;
+    width: unset !important;
+    // margin: 70px auto auto 100px;
+    margin: 70px auto auto 25px;
+    z-index: 1040 !important;
+
+    > .bm-menu {
+      box-shadow: none !important;
+    }
+  }
+
+  .sidebar-menu-container  {
+    height: calc(100vh - 171px);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 2px 20px 0 rgba(48, 50, 59, .15) !important;
+  }
+}
+
+
+
+.sidebar-nav-img {
+  height: 24px !important;
+}

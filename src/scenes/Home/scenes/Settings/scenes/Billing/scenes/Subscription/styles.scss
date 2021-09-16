@@ -1,0 +1,317 @@
+@import 'src/constants.scss';
+
+.subscription-wrapper {
+  .subscription-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 0;
+
+    .subscriptions-plans-list {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+      margin-top: 35px;
+
+      .plan-container {
+        width: 338px;
+        border-radius: 14px;
+        background: #3982fb;
+        border: 1px solid #3982fb;
+        margin-right: 27px;
+        padding: 30px;
+        cursor: pointer;
+        transition: all 300ms ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        
+        .plan-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h2 {
+            margin-bottom: 0 !important;
+            color: #fff !important;
+            font-size: 22px !important;
+          }
+          label {
+            color: #F8F9Fc;
+            margin-bottom: 0 !important;
+            font-size: 18px;
+          }
+        }
+        .plan-desc {
+          color: #F8F9Fc;
+          margin-bottom: 0 !important;
+          font-size: 15px;
+          margin-top: 10px;
+        }
+        .sms-plan-desc {
+          color: $lightTextColor;
+          margin-bottom: 0 !important;
+          font-size: 12px;
+          margin-top: 10px;
+          display: none;
+        }
+        .plan-limits {
+          color: $titleColor;
+          font-size: 15px;
+          margin-top: 7px;
+          display: none;
+
+          label {
+            color: $lightTextColor;
+            font-size: 15px;
+            margin-left: 17px;
+          }
+        }
+
+        .plan-price-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .plan-current-subscribers {
+            display: none;
+            font-size: 14px;
+            color: $titleColor;
+            .value {
+              color: $primaryColor;
+              font-size: 40px;
+            }
+          }
+          .plan-dots {
+            width: 70px;
+            height: 1px;
+            border: 1px dashed #C4C4C4;
+            display: none;
+          }
+
+          .plan-price {  
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .value {
+              color: #fff;
+              font-size: 40px;
+            }
+            color: #fff;
+            font-size: 14px;
+          }
+        }
+
+        hr {
+          background: #DCE0E9;
+          display: none;
+          margin: 0 !important;
+          margin-top: 23px !important;
+          margin-bottom: 23px !important;
+        }
+        .plan-features {
+          list-style: none;
+          padding-left: 0px;
+          margin-left: 0px;
+          li {
+            position: relative;
+            padding-left: 30px;
+            font-size:15px;
+            color: #fff;
+            margin-top: 10px;
+            
+            svg {
+              position: absolute;
+              left: 0px;
+              color: #3ABC0D;
+              ;
+              margin-right: 5px;
+            }
+          }
+        }
+        .plan-subscribers-meter-container {
+          display: none;
+          background-color: $bgLightColor;
+          padding: 20px;
+          border-radius: 20px;
+
+          .plan-subscribers-meter {
+            position: relative;
+            height: 20px;
+            width: 100%;
+            .plan-subscribers-meter-axis-bk {
+              width: 100%;
+              height: 6px;
+              border-radius: 20px;
+              background-color: #DCE0E9;
+              position: absolute;
+              left: 0;
+              top: 50%;
+              margin-top: -3px;
+            }
+            .plan-subscribers-meter-axis {
+              height: 6px;
+              border-radius: 20px;
+              background-color: #4761F0;
+              position: absolute;
+              left: 0;
+              top: 50%;
+              margin-top: -3px;
+            }
+            .plan-subscribers-meter-key {
+              width: 20px;
+              height: 20px;
+              border-radius: 4px;
+              background-color: #3350EE;
+              position: absolute;
+              top: 0px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: -10px;
+            }
+          }
+          .plan-subscribers-meter-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 400;
+            color: $lightTextColor;
+          }
+        }
+
+        .plan-activate-btn-container {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          .plan-name {
+            width: 100%;
+            height: 50px;
+            background: #E5E5E5;
+            border-radius: 8px;
+            color: $titleColor;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+          }
+          .btn-plan-activate {
+            margin-top: 20px;
+            color: $titleColor;
+            width: 100%;
+            height: 50px;
+            border-radius: 8px;
+            display: none;
+            background: #fff;
+            border: 1px solid #DCE0E9;
+            box-shadow: none;
+          }
+        }
+        &.active {
+          background: #fff;
+          border: 1px dashed #DCE0E9;
+          width: 600px;
+
+          .plan-title {
+            h2 {
+              color: $titleColor !important;
+            }
+            label {
+              color: $lightTextColor;
+            }
+          }
+          .plan-desc {
+            display: none;
+          }
+          .sms-plan-desc {
+            display: block;
+          }
+          .plan-limits {
+            display: block;
+          }
+
+
+          .plan-price-container {
+
+            .plan-current-subscribers {
+              display: block;
+            }
+            .plan-dots {
+              display: block;
+            }
+            .plan-price {  
+              display: block;
+  
+              .value {
+                color: $titleColor;
+                font-size: 40px;
+              }
+              color: $titleColor;
+              font-size: 14px;
+            }
+          }
+
+          hr {
+            display: block;
+          }
+          .plan-features {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            li {
+              position: relative;
+              padding-left: 30px;
+              font-size:15px;
+              color: $contentTextColor;
+              margin-top: 10px;
+              margin-right: 25px;
+              
+              svg {
+                position: absolute;
+                left: 0px;
+                color: #3ABC0D;
+                ;
+                margin-right: 5px;
+              }
+            }
+          }
+          .plan-name {
+            display: none;
+          }
+          .btn-plan-activate {
+            display: block;
+          }
+
+          .plan-subscribers-meter-container {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .cancel-subscription-container {
+    background: #fff;
+    margin-top: 10px;
+    padding: 0 !important;
+    border-radius: 0;
+  }
+  .cancel-subscription-button {
+    width: 100%;
+    height: 30px;
+    color: #FF0000;  
+    border: 0;
+    background: transparent;
+    outline: none;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  & div:last-child {
+    border-radius: 0px 0px 8px 8px;
+  }
+}

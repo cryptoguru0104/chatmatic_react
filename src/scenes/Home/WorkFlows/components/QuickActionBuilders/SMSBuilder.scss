@@ -1,0 +1,19 @@
+
+.aside-send-messagebox {
+  &.sms {
+    .sms-builder-block {
+
+      
+      .sms-builder-btn-save {
+        width: 100%;
+        height: 53px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+
+    .align-items-center {
+      padding: 0 !important;
+    }
+  }
+}

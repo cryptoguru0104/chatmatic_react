@@ -1,0 +1,268 @@
+@import 'src/constants.scss';
+
+.fanpage-home-container {
+  height: calc(100vh - 191px);
+  border-radius: 10px;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+
+  & > div {
+    border-radius: 10px;
+    height: 100%;
+  }
+
+  .homepage-top-container {
+    margin-bottom: 10px;
+    flex: 0 0 330px;
+
+    .user-info-container {
+      border-radius: 10px;
+      // box-shadow: 0 2px 4px 0 rgba(48, 50, 59, .15);
+
+      .card {
+        background: transparent !important;
+        border-radius: 10px;
+        border: 0px;
+
+        .card-image-container {
+          background-color: #fff !important;
+          overflow: hidden;
+          border-radius: 10px 10px 0 0;
+
+          img {
+            border-radius: 10px 10px 0 0;
+            height: 184px;
+            object-fit: cover;
+          }
+        }
+
+        .card-header {
+          padding: 10px 20px !important;
+          background-color: #fff !important;
+          height: 51px;
+          margin-top:6px;
+          margin-bottom: 4px;
+
+          h4 {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-right: 10px !important;
+          }
+
+          span {
+            color: #5f5f61 !important;
+          }
+        }
+
+        .card-body {
+          height: 95px;
+          border-radius:  0 0 10px 10px;
+          padding: 0px;
+          justify-content: space-between !important;
+          align-items: stretch !important;
+
+          .flex-column {
+            background: #fff;
+            flex-grow: 1;
+            margin-left: 4px;
+            padding-left: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+          }
+          .flex-column:first-child {
+            margin-left: 0px;
+            border-bottom-left-radius: 10px;
+          }
+          .flex-column:last-child {
+            border-bottom-right-radius: 10px;
+          }
+
+          strong {
+            font-size: 28px;
+            color: $titleColor;
+            text-align: left;
+            font-weight: 700;
+          }
+
+          small {
+            font-size: 14px;
+            color: $contentTextColor;
+            text-align: left;
+            font-weight: 400;
+          }
+
+          .vertical-line {
+            width: 1px;
+            height: 27px;
+            background-color: #979797;
+          }
+        }
+      }
+    }
+
+    .subscribers-chart-container {
+      .card {
+        border-radius: 10px;
+        // box-shadow: 0 2px 4px 0 rgba(48, 50, 59, .15);
+
+        .card-body {
+          font-size: 14px !important;
+
+          .dropdown-toggle {
+            &:hover {
+              transform: none;
+            }
+          }
+
+          & > span {
+            color: #B1B9CC;
+          }
+
+          & > div {
+            flex: 1;
+          }
+        }
+      }
+      
+      .subscriber-chart-tooltip-container {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background: $titleColor;
+        min-width: 68px;
+        text-align: center;
+        border-radius: 7px;
+        font-size: 15px;
+        color: #fff;
+      }
+
+    }
+  }
+
+  .homepage-details-container {
+    border-radius: 10px;
+    padding: 20px 0;
+    background-color: #fff;
+    flex: 1;
+    box-shadow: 0 2px 10px 0 rgba(48, 50, 59, .15);
+    margin-bottom: 2px;
+
+    .comments-container {
+      float: left;
+      width: 50%;
+      padding: 0 20px;
+      height: calc(100vh - 580px);
+
+      .comments-header {
+        .comment-search-container {
+          input {
+            border-radius: 19px !important;
+            width: 150px;
+            border: 1px solid #B1B9CC;
+            padding: 8px 14px;
+            font-size: 12px;
+            color: #464647;
+          }
+
+          i {
+            width: 14px;
+            color: #30323b;
+          }
+        }
+      }
+
+      .comments-list {
+        height: calc(100% - 45px);
+        overflow: auto;
+        &:hover{
+          cursor:pointer;
+        }
+        .page-post {
+          img {
+            max-height: 80px;
+          }
+
+          .post-content {
+            max-height: 80px;
+            overflow: hidden;
+          }
+
+          .btn-toggle {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .post-comment-container {
+      float: right;
+      width: 50%;
+      border-left: 1px solid #e6e7eb;
+      padding: 0 20px;
+      overflow: auto;
+      height: calc(100vh - 580px);
+      .toggle-container{
+        span{
+          margin-right:.75rem;
+        }
+      }
+      .btn-toggle{
+        border:1px solid #e4e5ec;
+      }
+      .post-left-container {
+        font-size: 14px;
+        color: #30323b;
+
+        input {
+          height: 40px;
+          border: 1px solid #e6e7eb;
+          color: #30323b;
+        }
+
+        textarea {
+          color: #30323b;
+        }
+
+        .comment-tip {
+          width: 14px;
+          height: 14px;
+          border-radius: 7px;
+          border: 1px solid #aaabad;
+        }
+
+        .action-container {
+          .btn {
+            padding: 13px 12px;
+            font-size: 12px;
+            width: 113px;
+            text-align: center;
+            box-shadow: none;
+            flex: 1;
+          }
+
+          .btn-save {
+            max-width: 200px;
+          }
+        }
+      }
+
+      .post-right-container {
+        & > div {
+          flex: 1;
+
+          .comment-count-info {
+            min-height: 100px;
+
+            small.text-muted {
+              font-size: 10px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

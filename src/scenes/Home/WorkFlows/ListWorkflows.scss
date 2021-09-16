@@ -1,0 +1,157 @@
+@import 'src/constants.scss';
+
+.list-workflow {
+  padding: 15px !important;
+
+  .list-workflow-head {
+    background: #fff;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px !important;
+  }
+
+  .inner-box-scroll-main {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0px !important;
+    padding-top: 0px !important;
+    margin-top: 15px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .paginationCol {
+    padding: 0px !important;
+  }
+
+  .list-workflow-grid-container {
+    height: calc(100% - 0px);
+
+    .MuiGrid-item  {
+      height: auto;
+    }
+
+    .list-add-btn {
+      height: auto;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 52.25%;
+      position: relative;
+      a {
+        display:block;
+        width:100%;
+        height:100%;
+
+        .list-add-btn-in {
+          width: 100%;
+          height: 100%;
+
+          div {
+            width: 44px;
+            height: 44px;
+            border-radius: 44px;
+            color: #fff;
+            background: #3350EE;
+            text-align: center;
+            line-height: 44px;
+            margin-bottom: 15px;
+            padding-left: 4px;
+          }
+        }
+
+        &:hover {
+          .list-add-btn-in {
+            div {
+              background: $titleColor;
+            }
+          }
+        }
+      }
+
+      .title-footer {
+        margin-top: 20px;
+        height: 24px;
+      }
+    }
+
+    .sequence-inner {
+      border-radius: 0;
+      background: #fff;
+      width: 100%;
+      height: auto;
+      padding: 20px;
+
+      .title-head {
+        margin-bottom: 20px;
+      }
+      .img-block {
+        height: auto;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 50%;
+        position: relative;
+
+        .img-block-content {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          padding: 0;
+          margin: 0;
+          height: 100%;
+
+          span {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            z-index: 999;
+            i {
+              color: $titleColor;
+            }
+  
+            &:hover {
+              i {
+                color: $primaryColor;
+              }
+            }          
+          }
+
+          &.workflow-cover-image {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+        }
+      }
+      .edit-listing {
+        margin-top: 20px;
+
+        .edit-listing-item {
+          button {
+            width: 17px;
+            height: 17px;
+            border: 0 !important;
+            background: transparent !important;
+            outline: none;
+
+            g {
+              fill: $titleColor;
+            }
+            &:hover {
+              border: 0 !important;
+              background: transparent !important;
+              g {
+                fill: $primaryColor;
+              }
+            }
+          }
+        }
+        .separator {
+          background: #DCE0E9;
+          width: 1px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

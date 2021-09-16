@@ -1,0 +1,114 @@
+.add-trigger {
+  padding: 1rem !important;
+  .saveBtn {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-left: 1rem;
+  }
+  .backBtn {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: white;
+  }
+  .trigger-aside-form {
+    width: 100%;
+    max-width: 335px;
+    height: 100%;
+    form.ui.form {
+        padding: 0px;
+        height: 100%;
+        overflow-y: auto;
+        background-color: transparent;
+        overflow-x: hidden;
+    }
+    .react-tagsinput {
+      background-color: transparent;
+    }
+    .customize-section {
+      height: calc(100% - 60px) !important;
+    }
+    .buttonsField.left-sidebar-newo{
+      width: 100%;
+     
+      .ui.button {
+        height: 110px;
+        .sidebar-list-img {
+          span {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .keywordMessage {
+        height: calc(100% - 100px);
+      }
+    }
+    .section-3 {
+      background-color: #F8F9FC;
+      margin: 1rem 0;
+      padding: 1rem 0;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #F8F9FC;
+        height: 100%;
+      }
+    }
+    &.trigger-customize {
+      background-color: #F8F9FC;
+      margin-left:2px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .note-section {
+      position: absolute;
+      bottom: 0;
+      img {
+        margin-top: 4px;
+        margin-right: 10px;
+      }
+    }
+
+    .trigger-main-left {
+      height: calc(100% - 85px) !important;
+    }
+  }
+  .heading-btn-right {
+    padding: 0 1rem;
+    flex-flow: wrap;
+  }
+  hr {
+    margin: 1rem 0;
+  }
+
+  .add-plus-icon-inner {
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 14px 0px;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+  }
+
+  .inner-box-main {
+    padding: 0px !important;
+  }
+  .graph {
+    height: 100px !important;
+  }
+}
+.button-group {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

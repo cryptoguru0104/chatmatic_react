@@ -1,0 +1,217 @@
+@import 'src/constants.scss';
+
+.billing-info-container {
+  border-radius: 0;
+  background: #fff;
+  padding: 30px;
+  padding-bottom: 10px;
+
+  .billing-email-container {
+    .billing-email {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: $lightTextColor;
+
+      button {
+        margin-left: 20px;
+        border: 0;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        svg {
+          *[fill] { fill: $lightTextColor; }
+          *[stroke] { stroke: $lightTextColor;}
+        }
+        :hover {
+          svg {
+            *[fill] { fill: $titleColor; }
+            *[stroke] { stroke: $titleColor;}
+          }
+        }
+      }
+    }
+    .edit-billing-email {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      input {
+        color: $lightTextColor;
+        border: 0;
+        outline: none;
+        background: transparent;
+        width: 300px;
+      }
+
+      button {
+        margin-left: 20px;
+        border: 0;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        svg {
+          *[fill] { fill: $lightTextColor; }
+          *[stroke] { stroke: $lightTextColor;}
+        }
+        :hover {
+          svg {
+            *[fill] { fill: $titleColor; }
+            *[stroke] { stroke: $titleColor;}
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    background: #E9EdF3;
+    margin-top: 26px;
+    margin-bottom: 26px;
+  }
+
+  .billing-cards-list-container {
+    .billing-cards-title {
+      margin-bottom: 23px;
+      h5 {
+        margin-right: 5px;
+      }
+    }
+    .billing-cards-list {
+      width: calc(100vw - 126px - 30px - 60px);
+      overflow: hidden;
+      overflow-x: auto;
+      display: flex;
+      justify-content: flex-start;
+
+      .stripecard-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 30px;
+        margin-bottom: 30px;
+      }
+      .stripecard {
+        width: 336px;
+        height: 226px;
+        border-radius: 14px;
+        background: #ecf9ea;
+        border: 1px solid #ecf9ea;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        &.active {
+          background: #e9f2fa;
+          border: 1px solid #e9f2fa;
+        }
+
+        &.empty {
+          background: #fff;
+          border: 1px dashed #DCE0E9;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          .plus-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $titleColor;
+            border: 1px dashed #DCE0E9;
+            margin-bottom: 11px;
+          }
+
+          color: $titleColor;
+          font-size: 15px;
+        }
+
+        .settings {
+          outline: 0;
+          border: 0;
+          background: transparent;
+          height: 19px;
+          width: 18px;
+          padding: 0;
+          svg {
+            width: 100%;
+            height: 100%;
+            *[fill] { fill: $lightTextColor;}
+            *[stroke] { stroke: $lightTextColor;}
+          }
+        }
+        .card-no {
+          margin-top: 22px;
+          font-size: 20px;
+          color: $titleColor;
+          font-weight: 500;
+        }
+
+        .card-exp {
+          margin-top: 18px;
+          font-weight: 400;
+          color: $lightTextColor;
+          font-size: 13px;
+        }
+
+        hr {
+          background: #D6E0E8;
+          margin-left: -30px;
+          width: calc(100% + 60px);
+          margin-top: 25px;
+          margin-bottom: 20px;
+        }
+
+        .stripecard-footer {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .btn-update-payment-info {
+            font-size: 14px;
+            color: #6B6F87;
+            cursor: pointer;
+          }
+          .card-status{
+            font-size: 14px;
+            color: #6B6F87;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .icon {
+              width: 12px;
+              height: 12px;
+              border-radius: 12px;
+              background: #3ABC0D;
+              border: 2px solid #68D342;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-settings-popover {
+  .MuiPopover-paper {
+    width: 240px;
+    background: #fff;
+    border-radius: 10px;
+    .card-settings-popover-item {
+      font-size: 15px;
+      color: $contentTextColor;
+      cursor: pointer;
+      margin: 20px;
+      svg {
+        margin-right: 9px;
+      }
+    }
+  }
+}

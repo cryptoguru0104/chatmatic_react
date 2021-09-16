@@ -1,0 +1,2443 @@
+FORMAT: 1A
+HOST: https://private-0f67a85-chatmaticv1.apiary-mock.com
+
+# chatmaticv1
+
+Chatmatic API
+
+## List Custom Fields [/pages/{page_uid}/custom-fields]
+
+### /pages/{page_uid}/custom-fields [GET]
+
+View existing custom fields
+
++ Request
+
+        {
+        
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "custom_fields": [{
+                    "uid": 4978,
+                    "page_uid": 80235,
+                    "field_name": "custom field name",
+                    "validation_type": "general",
+                    "merge_tag": "{custom_field_name}",
+                    "field_type": "set_value"
+                },
+                {
+                    "uid": 4979,
+                    "page_uid": 80235,
+                    "field_name": "custom field name2",
+                    "validation_type": "general",
+                    "merge_tag": "{custom_field_name2}",
+                    "field_type": "set_value"
+                },
+            ]
+        }
+
+## Create Custom Field [/pages/{page_uid}/custom-fields]
+
+### /pages/{page_uid}/custom-fields [POST]
+
+Create a new custom field record
+
++ Request (application/json)
+
+        {
+            "field_name": "custom field name",
+            "field_type": "set_value",      // or, "increment"
+            "validation_type": "general"    // only option currently
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "custom_field": {
+                    "uid": 4978,
+                    "page_uid": 80235,
+                    "field_name": "custom field name",
+                    "validation_type": "general",
+                    "merge_tag": "{custom_field_name}",
+                    "field_type": "set_value"
+                }
+        }  
+
+## Broadcast Subscriber Count [/pages/{page_uid}/broadcasts/subscriber-count]
+
+### //pages/{page_uid}/broadcasts/subscriber-count [POST]
+
+Obtain count of subscribers a given set of broadcast filters will effect
+
++ Request (application/json)
+
+        {
+            "broadcast_type"    : "marketing", // or "notification"
+            "filters"           : [
+                {
+                    "condition": "send_to_all_subscribers",
+                    "variable": null
+                },
+                {
+                    "condition": "user_gender",
+                    "variable" : "male" // or "female"
+                },
+                {
+                    "condition": "user_subscribed_after_date",
+                    "variable" : "2018-02-15 10:00:00"
+                },
+                {
+                    "condition": "user_subscriber_before_date",
+                    "variable" : "2018-02-15 10:00:00"
+                },
+                {
+                    "condition": "user_subscribed_to_campaign",
+                    "variable" : [123,1234,123245] // Campaign uid's
+                },
+                {
+                    "condition": "user_not_subscribed_to_campaign",
+                    "variable" : [123,1234,123245] // Campaign uid's
+                },
+                {
+                    "condition": "user_tagged_as",
+                    "variable" : [123,1234,123245] // Tag uid's
+                },
+            ],
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "error"                     :   0,
+            "error_msg"                 :   "",
+            "count"                     :   1234
+        }  
+        
+## Ready - Broadcast Update [/pages/{page_uid}/broadcasts/{broadcast_uid}]
+
+### /pages/{page_uid}/broadcasts/{broadcast_uid} [PATCH]
+
+Fanpage broadcast update
+
++ Request (application/json)
+
+        {
+            "name"                      :   "new broadcast",
+            "broadcast_type"            :   "notification",
+            "intention"                 :   "More than 10 characters",
+            "start_time"                :   "2019-02-08 10:16:51", // or "immediately"
+            "conditions": [
+                {
+                    "type": "user_gender",
+                    "value": "male"
+                },
+                {
+                    "type": "subscribe",
+                    "constraint": "before",
+                    "value": "2019-03-09"
+                },
+                {
+                    "type": "ifUser",
+                    "constraint": "subscribed",
+                    "value": 312  // campaign uid
+                },
+                {
+                    "type": "hasTag",
+                    "constraint": "hasNot",
+                    "value": 123 // tag uid
+                }
+            ],
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true
+        }        
+
+
+## Ready - Broadcast Subscribers [/pages/{page_uid}/broadcasts/{broadcast_uid}/get-subscribers]
+
+### /pages/{page_uid}/broadcasts/{broadcast_uid}/get-subscribers [POST]
+
+Get subscribers in broadcast
+
++ Request (application/json)
+
+        [
+            {
+                "condition": "user_gender",
+                "variable": "male"
+            }
+        ]
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "error"                     :   0,
+            "error_msg"                 :   "",
+            "subscribers"               :   123
+        }        
+       
+
+## Ready - Campaigns [/pages/{page_id}/campaigns]
+
+### /pages/{page_id}/campaigns/ [GET]
+
++ Request (application/json)
+        
+        {
+        }
+    
++ Response 200 (application/json)
+    
+        [{
+            "uid": 35,
+            "public_id": "f2r2m5Z0F1Q2B8x2C3g0U8C160z2J",
+            "enabled": 1,
+            "created_at_utc": "2018-03-28 21:05:22.3347",
+            "type": "scan_refurl",
+            "campaign_name": "Test Code 2",
+            "workflow_uid": 84,
+            "presubmit_title": "",
+            "presubmit_body": "",
+            "presubmit_image": "",
+            "approval_method": "",
+            "checkbox_plugin_button_text": "",
+            "postsubmit_type": "",
+            "postsubmit_redirect_url": "",
+            "postsubmit_redirect_url_button_text": "",
+            "postsubmit_content_title": "",
+            "postsubmit_content_body": "",
+            "postsubmit_content_image": "",
+            "impressions": 0,
+            "conversions": 0,
+            "m_me_url": "",
+            "subscriptions": 30,
+            "total_subscribers": 120,
+            "today_subscribers": 12,
+            "messages_sent": 1230,
+            "messages_read": 1110,
+            "messages_clicked": 123,
+            "custom_ref": null,
+            "visits": 123,
+        },
+        {
+            "uid": 36,
+            "public_id": "S6R2D0S1B4S179h2o3J0i8Y1y0F2G",
+            "enabled": 1,
+            "created_at_utc": "2018-03-29 14:10:26.180761",
+            "type": "landing_page",
+            "campaign_name": "dadsasd",
+            "workflow_uid": 84,
+            "presubmit_title": "a",
+            "presubmit_body": "a",
+            "presubmit_image": "",
+            "approval_method": "send_to_messenger_plugin",
+            "checkbox_plugin_button_text": "",
+            "postsubmit_type": "content_display",
+            "postsubmit_redirect_url": "",
+            "postsubmit_redirect_url_button_text": "",
+            "postsubmit_content_title": "b",
+            "postsubmit_content_body": "b",
+            "postsubmit_content_image": "",
+            "impressions": 27,
+            "conversions": 0,
+            "m_me_url": "",
+            "subscriptions": 40,
+            "total_subscribers": 120,
+            "today_subscribers": 12,
+            "messages_sent": 1230,
+            "messages_read": 1110,
+            "messages_clicked": 123,
+            "custom_ref": null,
+            "visits": 123,
+        },
+        {
+            "uid": 38,
+            "public_id": "W5g4B5k1p7B10942C3X0P871Q0Q2m",
+            "enabled": 1,
+            "created_at_utc": "2018-03-29 17:15:45.290895",
+            "type": "m_dot_me",
+            "campaign_name": "sdasdasd",
+            "workflow_uid": 84,
+            "presubmit_title": "",
+            "presubmit_body": "",
+            "presubmit_image": "",
+            "approval_method": "",
+            "checkbox_plugin_button_text": "",
+            "postsubmit_type": "",
+            "postsubmit_redirect_url": "",
+            "postsubmit_redirect_url_button_text": "",
+            "postsubmit_content_title": "",
+            "postsubmit_content_body": "",
+            "postsubmit_content_image": "",
+            "impressions": 0,
+            "conversions": 0,
+            "m_me_url": "http://m.me/536796596358469?ref=test_ref",
+            "subscriptions": 55,
+            "total_subscribers": 120,
+            "today_subscribers": 12,
+            "messages_sent": 1230,
+            "messages_read": 1110,
+            "messages_clicked": 123,
+            "custom_ref": "test_ref",
+            "visits": 123,
+        }]
+
+
+## Ready - Get Campaign From Public Id [/campaigns/{public_id}]
+
+### /campaigns/{public_id} [GET]
+
++ Request (application/json)
+        
+        {
+            "public_id": "f2r2m5Z0F1Q2B8x2C3g0U8C160z2J"
+        }
+    
++ Response 200 (application/json)
+    
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+            "campaign": [
+                "uid": 35,
+                "fb_id": "1707176109573497",
+                "public_id": "f2r2m5Z0F1Q2B8x2C3g0U8C160z2J",
+                "enabled": 1,
+                "created_at_utc": "2018-03-28 21:05:22.3347",
+                "type": "landing_page",
+                "campaign_name": "Test Code 2",
+                "workflow_uid": 84,
+                "presubmit_title": "",
+                "presubmit_body": "",
+                "presubmit_image": "",
+                "approval_method": "",
+                "checkbox_plugin_button_text": "",
+                "postsubmit_type": "",
+                "postsubmit_redirect_url": "",
+                "postsubmit_redirect_url_button_text": "",
+                "postsubmit_content_title": "",
+                "postsubmit_content_body": "",
+                "postsubmit_content_image": "",
+            ]
+        }
+
+
+## Ready - Campaign Update [/pages/{page_id}/campaigns/{campaign_id}/]
+
+### /pages/{page_id}/campaigns/{campaign_id}/ [PATCH]
+
++ Request (application/json)
+
+        {
+            "uid": 35,
+            "public_id": "f2r2m5Z0F1Q2B8x2C3g0U8C160z2J",
+            "campaign_name": "Test Code 2",
+            "workflow_uid": 84,
+            "presubmit_title": "",
+            "presubmit_body": "",
+            "presubmit_image": "",
+            "approval_method": "",
+            "postsubmit_type": "",
+            "postsubmit_redirect_url": "",
+            "postsubmit_redirect_url_button_text": "",
+            "postsubmit_content_title": "",
+            "postsubmit_content_body": "",
+            "postsubmit_content_image": "",
+            "custom_ref": "testcustomurl"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"   :   true
+        }
+
+        
+## Ready - Campaign Create [/pages/{page_id}/campaigns/]
+
+### /pages/{page_id}/campaigns/ [POST]
+
+Create a new campaign
+
++ Request (application/json)
+
+        {
+            "type": "m_dot_me",
+            "campaign_name": "Test Code 2",
+            "workflow_uid": 84,
+            "presubmit_title": "",
+            "presubmit_body": "",
+            "presubmit_image": "",
+            "approval_method": "",
+            "postsubmit_type": "",
+            "postsubmit_redirect_url": "",
+            "postsubmit_redirect_url_button_text": "",
+            "postsubmit_content_title": "",
+            "postsubmit_content_body": "",
+            "postsubmit_content_image": "",
+            "custom_ref": null
+        }
+
++ Response 200 (application/json)
+
+        {
+            "facebook_messenger_code"   :   "facebook_messenger_code",
+            "b64_message_code"          :   "b64_message_code",
+            "public_id"        :   "3234023423423423434",
+            "uid"              :   3181,
+            "m_me_url"                  :   "https://m.me/27912312312312?ref=campaign%2342342342343242"
+        }
+
+        
+## Ready - Campaign Delete [/pages/{page_id}/campaigns/{campaign_id}]
+
+### /pages/{page_id}/campaigns/{campaign_id} [DELETE]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   : true
+        }
+        
+
+## Ready - FanPagePostsList [/pages/{page_id}/posts]
+
+### /pages/{page_id}/posts [GET]
+
++ Request (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "posts": [
+                {
+                    "uid":80235,
+                    "post_type":"status", 
+                    "trigger": true, 
+                    "permalink_url":"https:\/\/www.facebook.com\/1969889253089863\/posts\/1983974801681308\/","message":"dfdfdf","picture":null,"comments":0,"facebook_post_id":"1969889253089863_1983974801681308",
+                    "facebook_created_time_utc":"2018-11-23 19:44:02"
+                },
+                {
+                    "uid":80236,
+                    "post_type":"status", 
+                    "trigger": false, 
+                    "permalink_url":"https:\/\/www.facebook.com\/1969889253089863\/posts\/1983974801681309\/","message":"123123","picture":null,"comments":5,"facebook_post_id":"1969889253089863_1983974801681309","facebook_created_time_utc":"2018-11-23 19:44:02"
+                }
+            ],
+            "triggers": [
+                {
+                    "uid": 4978,
+                    "post_uid": 80235,
+                    "active": true,
+                    "inclusion_keywords": "sending key",
+                    "message": "111dfdf",
+                    "messages_sent": 1,
+                    "messages_read": 9
+                }
+            ]
+        }
+        
+
+## Ready - Workflows [/pages/{page_id}/workflows/]
+    
+### /pages/{page_id}/workflows/ [GET]
+
++ Request (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "workflows": [
+            {
+                "uid" : 84,
+                "page_uid" : 142,
+                "name" : "General Test",
+                "workflow_type" : "keywordmsg",
+                "keywords" : ["first Keyword", "second Keyword"],
+                "keywords_option": "contains_any",
+                "messages_delivered" : 0,
+                "messages_read_count" : 0,
+                "messages_read_ratio" : 45,
+                "messages_clicked_count" : 0,
+                "messages_clicked_ratio" : 62,
+                "created_at_utc" : "2018-09-10 22:34:04.909029",
+                "archived": false,
+                "steps": [
+                    {
+                        "name": "Main Step can't be deleted",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e10",
+                        "items": [
+                            {
+                                "type": "card",
+                                "media_uid": 123,
+                                "image": "https://any.image.link  required field",
+                                "headline": "Required Card Headline",
+                                "description": "Required Card Desciption",
+                                "action_btns": [
+                                    {
+                                        "label": "New Message",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e11",
+                                        "action_type": "postback"
+                                    },
+                                    {
+                                        "label": "Call Us",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "phone": "+13242123212",
+                                        "action_type": "phone_number"
+                                    },
+                                    {
+                                        "label": "URL",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "open_url": "https://www.google.com",
+                                        "action_type": "web_url"
+                                    },
+                                    {
+                                        "label": "Share",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "action_type": "share"
+                                    }
+                                ],
+                                "order": 0
+                            },
+                            {
+                                "type": "delay",
+                                "delay_time": 5,
+                                "show_typing": true,
+                                "order": 1
+                            },
+                            {
+                                "type": "audio",
+                                "media_uid": 312,
+                                "audio": "https://required.audio.link",
+                                "order": 2
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "New Message from Action Button",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e11",
+                        "items": [
+                            {
+                                "type": "carousel",
+                                "items": [
+                                    {
+                                        "media_uid": 31,
+                                        "image": "https://required.image.link",
+                                        "headline": "Required Carousel1 Headline",
+                                        "description": "Required Carousel1 Description",
+                                        "action_btns": []
+                                    },
+                                    {
+                                        "media_uid": 32,
+                                        "image": "https://required.image.link",
+                                        "headline": "Required Carousel2 Headline",
+                                        "description": "Required Carousel2 Description",
+                                        "action_btns": [
+                                            {
+                                                "label": "Google Link",
+                                                "tags": [
+                                                    {"uid": 21, "value": "Hello"}
+                                                ],
+                                                "automation_uid": null,
+                                                "openUrl": "https://www.google.com",
+                                                "action_type": "web_url"
+                                            }
+                                        ],
+                                        "image_link": "https://optional.image.link"
+                                    }
+                                ],
+                                "order": 0
+                            },
+                            {
+                                "type": "text",
+                                "text_message": "Any text to display including emojis, etc.",
+                                "order": 1
+                            },
+                            {
+                                "type": "image",
+                                "media_uid": 312,
+                                "image": "https://required.image.link",
+                                "order": 2
+                            }
+                        ],
+                        "quick_replies": [
+                            {
+                                "reply_type": "text"
+                                "reply_text": "Quick Reply Test",
+                                "tags": [
+                                    {"uid": 21, "value": "Hello"}
+                                ],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12"
+                            },
+                            {
+                                "reply_type": "text",
+                                "reply_text": "Sample Custom Field QR",
+                                "tags": [],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12",
+                                "custom_field_uid": 12,
+                                "custom_field_value": "sample value override"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Step for Quick Reply",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12",
+                        "items": [
+                            {
+                                "type": "video",
+                                "media_uid": 331,
+                                "video": "https://required.video.link",
+                                "order": 0
+                            }
+                        ],
+                        "quick_replies": [
+                            {
+                                "reply_type": "email"
+                                "reply_text": "Eamil",d
+                                "tags": [
+                                    {"uid": 21, "value": "Hello"}
+                                ],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Quick Reply for Email",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13",
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "Text to display email address.",
+                                "order": 0
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "Example free text input",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13",
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "normal text message",
+                                "order": 0
+                            },
+                            {
+                                "type": "free_text_input",
+                                "text_message": "What is your favorite color?",
+                                "next_step_uid": 12324,
+                                "custom_field_uid": 12,
+                                "tags": [],
+                                "automation_uid": null
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "Follow-up to free_text_input",
+                        "step_uid": 12324,
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "wow, what a boring choice."
+                            }
+                        ],
+                        "quick_replies": []
+                    }
+                ]
+            }],
+            "broadcasts": [
+                {
+                    "name"                      :   "new broadcast",
+                    "broadcast_type"            :   "notification",
+                    "intention"                 :   "More than 10 characters",
+                    "start_time"                :   "2019-02-08 10:16:51", // or "immediately"
+                    "conditions": [
+                        {
+                            "type": "user_gender",
+                            "value": "male"
+                        },
+                        {
+                            "type": "subscribe",
+                            "constraint": "before",
+                            "value": "2019-03-09"
+                        },
+                        {
+                            "type": "ifUser",
+                            "constraint": "subscribed",
+                            "value": 312  // campaign uid
+                        },
+                        {
+                            "type": "hasTag",
+                            "constraint": "hasNot",
+                            "value": 123 // tag uid
+                        }
+                    ],
+                    "page_uid": 441,
+                    "status": 1,
+                    "uid": 423,
+                    "workflow_uid": 1231
+                },
+                {
+                    "broadcast_type": null,
+                    "conditions_json": null,
+                    "end_time_utc": null,
+                    "intention": null,
+                    "page_uid": 441,
+                    "start_time_utc": null,
+                    "status": 0,
+                    "uid": 68,
+                    "workflow_uid": 156
+                }
+            ],
+            "merge_tags": [
+                "{taco_bell}",
+                "{birthday}
+            ]
+        }
+
+
+## Ready - File Upload [/pages/{page_id}/fileupload]
+
+### /pages/{page_id}/fileupload [POST]
+
++ Request (application/json)
+
+        {
+            "type": "image", // or audio, videofile uploa
+            "src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFhUXGB0bGBcYGBgfFxodFxgXGBcYGBkaHSggGBolHRcaIjEhJSkrLi4" // base64 encoded string
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "uid": 124,
+            "url": "https://www.chatmatic.com/public/example.url.com"
+        }
+        
+        
+
+## Ready - Delete File Uploaded [/pages/{page_id}/fileupload/{media_uid}]
+
+### /pages/{page_id}/fileupload/{media_uid} [DELETE]
+
++ Request (application/json)
+
+        {
+            "media_type": "image" // audio/image/video
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+        
+        
+
+## Ready - Workflow Delete [/pages/{page_id}/workflows/{workflow_id}]
+
+### /pages/{page_id}/workflows/{workflow_id} [DELETE]
+
++ Request (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+        
+        
+## Ready - Workflow Add [/pages/{page_id}/workflows]
+
+### /pages/{page_id}/workflows [POST]
+
++ Request (application/json)
+
+        {
+            "engage_name": "Test Workflow for Steps data",
+            "engage_type": "broadcast",
+            "keywords": [],
+            "keywords_option": "contains_any",
+             "steps": [
+                    {
+                        "name": "Main Step can't be deleted",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e10",
+                        "items": [
+                            {
+                                "type": "card",
+                                "media_uid": 123,
+                                "image": "https://any.image.link  required field",
+                                "headline": "Required Card Headline",
+                                "description": "Required Card Desciption",
+                                "action_btns": [
+                                    {
+                                        "label": "New Message",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e11",
+                                        "action_type": "postback"
+                                    },
+                                    {
+                                        "label": "Call Us",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "phone": "+13242123212",
+                                        "action_type": "phone_number"
+                                    },
+                                    {
+                                        "label": "URL",
+                                        "automation_uid": 123,
+                                        "tags": [
+                                            {"uid": 21, "value": "Hello"}
+                                        ],
+                                        "open_url": "https://www.google.com",
+                                        "action_type": "web_url"
+                                    }
+                                ],
+                                "order": 0
+                            },
+                            {
+                                "type": "delay",
+                                "delay_time": 5,
+                                "show_typing": true,
+                                "order": 1
+                            },
+                            {
+                                "type": "audio",
+                                "media_uid": 312,
+                                "audio": "https://required.audio.link",
+                                "order": 2
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "New Message from Action Button",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e11",
+                        "items": [
+                            {
+                                "type": "carousel",
+                                "items": [
+                                    {
+                                        "media_uid": 31,
+                                        "image": "https://required.image.link",
+                                        "headline": "Required Carousel1 Headline",
+                                        "description": "Required Carousel1 Description",
+                                        "action_btns": [],
+                                        "order": 0
+                                    },
+                                    {
+                                        "media_uid": 32,
+                                        "image": "https://required.image.link",
+                                        "headline": "Required Carousel2 Headline",
+                                        "description": "Required Carousel2 Description",
+                                        "action_btns": [
+                                            {
+                                                "label": "Google Link",
+                                                "tags": [
+                                                    {"uid": 21, "value": "Hello"}
+                                                ],
+                                                "automation_uid": null,
+                                                "openUrl": "https://www.google.com",
+                                                "action_type": "web_url"
+                                            }
+                                        ],
+                                        "image_link": "https://optional.image.link",
+                                        "order": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "text",
+                                "text_message": "Any text to display including emojis, etc.",
+                                "order": 0
+                            },
+                            {
+                                "type": "image",
+                                "media_uid": 312,
+                                "image": "https://required.image.link",
+                                "order": 1
+                            }
+                        ],
+                        "quick_replies": [
+                            {
+                                "reply_type": "text"
+                                "reply_text": "Quick Reply Test",
+                                "tags": [
+                                    {"uid": 21, "value": "Hello"}
+                                ],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Step for Quick Reply",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12",
+                        "items": [
+                            {
+                                "type": "video",
+                                "media_uid": 331,
+                                "video": "https://required.video.link",
+                                "order": 0
+                            }
+                        ],
+                        "quick_replies": [
+                            {
+                                "reply_type": "email"
+                                "reply_text": "Eamil",
+                                "tags": [
+                                    {"uid": 21, "value": "Hello"}
+                                ],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Quick Reply for Email",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13",
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "Text to display email address.",
+                                "order": 0
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "Example free text input",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13",
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "normal text message",
+                                "order": 0
+                            },
+                            {
+                                "type": "free_text_input", // Must be the last item in a step
+                                "text_message": "What is your favorite color?",
+                                "next_step_uid": 12324,
+                                "custom_field_uid": 12,
+                                "tags": [],
+                                "automation_uid": null
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "Follow-up to free_text_input",
+                        "step_uid": 12324,
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "wow, what a boring choice."
+                            }
+                        ],
+                        "quick_replies": []
+                    }
+                ]
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "uid": 333,
+            // if type is broadcast
+            "broadcast": {
+                "broadcast_type": null,
+                "conditions_json": null,
+                "end_time_utc": null,
+                "intention": null,
+                "page_uid": 1232,
+                "start_time_utc": null,
+                "status": 0,
+                "uid": 321,
+                "workflow_uid": 333
+            }
+        }
+        
+        
+## Ready - Workflow Update [/pages/{page_id}/workflows/{workflow_id}/]
+
+### /pages/{page_id}/workflows/{workflow_id} [PATCH]
+
++ Request (application/json)
+
+        {
+            "engage_name": "testName",
+            "engage_type": "general",
+             "steps": [
+                    {
+                        "name": "test2",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e10",
+                        "items": [
+                            {
+                                "type": "card",
+                                "media_uid": 32,
+                                "image": "https://www.google.com",
+                                "headline": "111",
+                                "description": "111",
+                                "action_btns": [],
+                                "order": 0
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Example free text input",
+                        "step_uid": "20672400-f65a-11e8-96b8-8da716ab8e13",
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "normal text message",
+                                "order": 0
+                            },
+                            {
+                                "type": "free_text_input", // Must be the last item in a step
+                                "text_message": "What is your favorite color?",
+                                "next_step_uid": 12324,
+                                "custom_field_uid": 12,
+                                "tags": [],
+                                "automation_uid": null
+                            }
+                        ],
+                        "quick_replies": []
+                    },
+                    {
+                        "name": "Follow-up to free_text_input",
+                        "step_uid": 12324,
+                        "items": [
+                            {
+                                "type": "text",
+                                "text_message": "wow, what a boring choice."
+                            }
+                        ],
+                        "quick_replies": [
+                            {
+                                "reply_type": "text"
+                                "reply_text": "Quick Reply Test",
+                                "tags": [
+                                    {"uid": 21, "value": "Hello"}
+                                ],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12"
+                            },
+                            {
+                                "reply_type": "text",
+                                "reply_text": "Sample Custom Field QR",
+                                "tags": [],
+                                "automation_uid": null,
+                                "next_step_uid": "20672400-f65a-11e8-96b8-8da716ab8e12",
+                                "custom_field_uid": 12,
+                                "custom_field_value": "sample value override"
+                            }
+                        ]
+                    }
+                ]
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }    
+
+        
+## Ready - pages [/pages]
+
+### /pages [GET]
+
+Returns the list of fanpages
+
++ Request (application/json)
+
+        {
+            "refresh": true // optional
+        }
+        
++ Response 200 (application/json)
+        
+        {
+            "pages"                     :   [
+                {
+                    "uid"               :   142,
+                    "fb_name"           :   "Chatmatic",
+                    "fb_id"             :   "1707176109573497",
+                    "fb_page_token"     :   "PaleoNation",
+                    "is_connected"      :   1,
+                    "subscribers"       :   2,
+                    "comments"          :   12,
+                    "page_likes"        :   7545,
+                    "active_triggers"   :   3,
+                    "created_at_utc"    :   "2018-03-24 20:40:58",
+                    "fb_cover_photo"    :   "url",
+                    "menus_active"      :   true,
+                    "licensed"          :   true
+                },
+                {
+                    "uid"               :   174,
+                    "fb_name"           :   "Sarah Grace",
+                    "fb_id"             :   "114298085326382",
+                    "fb_page_token"     :   "PaleoNation",
+                    "is_connected"      :   0,
+                    "subscribers"       :   0,
+                    "comments"          :   255,
+                    "page_likes"        :   0,
+                    "active_triggers"   :   0,
+                    "created_at_utc"    :   "2018-03-12 23:30:39",
+                    "fb_cover_photo"    :   "url",
+                    "menus_active"      :   false,
+                    "licensed"          :   true
+                },
+                {
+                    "uid"               :   1568,
+                    "fb_name"           :   "Tonio bot test",
+                    "fb_id"             :   "2153279921594390",
+                    "fb_page_token"     :   "PaleoNation",
+                    "is_connected"      :   1,
+                    "subscribers"       :   5,
+                    "comments"          :   2,
+                    "page_likes"        :   0,
+                    "active_triggers"   :   0,
+                    "created_at_utc"    :   "2018-09-04 17:36:15",
+                    "fb_cover_photo"    :   "url",
+                    "menus_active"      :   true,
+                    "licensed"          :   false
+                }
+            ]
+        }
+
+## Ready - Page [/pages/{page_id}]
+
+### Ready - /pages/{page_id} [PATCH]
+
+Update page
+
++ Request (application/json)
+
+        {   
+            "page_uid"                  :   "page_uid",
+            "is_connected"              :   1
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true
+        }
+
+
+## Ready - Connect All Pages [/pages/all]
+
+### /pages/all [POST]
+
+Connect all pages
+
++ Request (application/json)
+
+        {   
+            
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true
+        }
+
+## Ready - PersistentMenus [/pages/{page_id}/menus]
+
+### /pages/{page_id}/menus [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "menus": [
+                {
+                    "uid" : 84,
+                    "page_uid": 142,
+                    "name" : "Test Link",
+                    "type" : "link",
+                    "value": "https://www.google.com" // url
+                },
+                {
+                    "uid" : 85,
+                    "page_uid": 143,
+                    "name" : "Test Message",
+                    "type" : "message",
+                    "value": 183 //workflow uid
+                },
+                {
+                    "uid" : 86,
+                    "page_uid": 143,
+                    "name" : "Test Submenu",
+                    "type" : "submenu",
+                    "value": [
+                        {
+                            "uid": 12,
+                            "menu_uid": 86,
+                            "name": "first submenu",
+                            "type": "link",
+                            "value": "https://www.google.com"
+                        },
+                        {
+                            "uid": 13,
+                            "menu_uid": 86,
+                            "name": "second submenu",
+                            "type": "message",
+                            "value": 31
+                        }
+                    ]
+                }
+            ]
+        } 
+
+
+## Ready - PersistentMenu Add [/pages/{page_id}/menus/]
+
+### /pages/{page_id}/menus/ [POST]
+
++ Request (application/json)
+
+        {
+            "type": "link",
+            "value": "https://www.google.com",
+            "name": "Menu1"
+            /*
+                "name" : "Test Message",
+                "type" : "message",
+                "value": 183 //workflow uid
+            */
+            /*
+                "name" : "Test Submenu",
+                "type" : "submenu",
+                "value": [
+                    {
+                        "name": "first submenu",
+                        "type": "link",
+                        "value": "https://www.google.com"
+                    },
+                    {
+                        "name": "second submenu",
+                        "type": "message",
+                        "value": 31
+                    }
+                ]
+            */
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "uid": 13
+        }
+        
+
+## Ready - PersistentMenu Toggle Active [/pages/{page_id}/menus]
+
+### /pages/{page_id}/menus/ [PUT]
+
++ Request (application/json)
+
+        {
+            "active": true
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "succecss": true
+        }
+
+
+## Ready - PersistentMenu Delete [/pages/{page_id}/menus/{menu_id}/]
+
+### /pages/{page_id}/menus/{menu_id}/ [DELETE]
+
++ Request (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+
+## Ready - PersistentMenu Update [/pages/{page_id}/menus/{menu_id}]
+
+### /pages/{page_id}/menus/{menu_id} [PUT]
+
++ Request (application/json)
+
+        {
+            "type": "link",
+            "value": "https://www.google.com",
+            "name": "Menu1"
+            /*
+                "name" : "Test Message",
+                "type" : "message",
+                "value": 183 //workflow uid
+            */
+            /*
+                "name" : "Test Submenu",
+                "type" : "submenu",
+                "value": [
+                    {
+                        "uid": 12,
+                        "menu_uid": 86,
+                        "name": "first submenu",
+                        "type": "link",
+                        "value": "https://www.google.com"
+                    },
+                    {
+                        "uid": 13,
+                        "menu_uid": 87,
+                        "name": "second submenu",
+                        "type": "message",
+                        "value": 31
+                    }
+                ]
+            */
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+
+## Ready - Automations [/pages/{page_id}/automations]
+
+### /pages/{page_id}/automations [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+            "automations": [{
+                "uid" : 123,
+                "page_uid" : 142,
+                "active": true,
+                "within_day": 11,
+                "total": 123,
+                "name": "Adding",
+                "tags": [
+                    {"uid": 21, "value": "Hello"}
+                ],
+                "user_unsubscribe": true,
+                "trigger_integrations": [],
+                "notify_admins": []
+            }]
+        }
+        
+        
+## Ready - Automation Update [/pages/{page_id}/automations/{automation_id}]
+
+### /pages/{page_id}/automations/{automation_id} [PUT]
+
++ Request (application/json)
+
+        {
+            "uid" : 123,
+            "page_uid" : 142,
+            "active": true,
+            "within_day": 11,
+            "total": 123,
+            "name": "Adding",
+            "tags": [
+                {"uid": 21, "value": "Hello"}
+            ],
+            "user_unsubscribe": true,
+            "trigger_integrations": [],
+            "notify_admins": []
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+        
+        
+## Ready - Automation Add [/pages/{page_id}/automations/]
+
+### /pages/{page_id}/automations [POST]
+
++ Request (application/json)
+
+        {
+            "page_uid" : 142,
+            "active": true,
+            "name": "Adding",
+            "tags": [
+                {"uid": 21, "value": "Hello"}
+            ],
+            "user_unsubscribe": true,
+            "trigger_integrations": [],
+            "notify_admins": []
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "uid": 333
+        }
+
+
+## Ready - Automation Delete [/pages/{page_id}/automations/{automation_id}/]
+
+### /pages/{page_id}/automations/{automation_id} [DELETE]
+
++ Request (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+
+## Ready - Admins [/pages/{page_id}/admins]
+
+### /pages/{page_id}/admins [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+            "admins": [{
+                "uid": 123,
+                "first_name": "Danny",
+                "last_name": "McBride",
+                "email": "danny@gmail.com",
+                "photo": "photo_url"
+            },{
+                "uid": 124,
+                "first_name": "Alexander",
+                "last_name": "McBride",
+                "email": "alexander@gmail.com",
+                "photo": "photo_url"
+            }]
+        }
+        
+        
+## Ready - Add Admin [/pages/{page_id}/admins/]
+
+### /pages/{page_id}/admins [POST]
+
++ Request (application/json)
+
+        {
+            "email": "test@test.com"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+        }
+        
+        
+## Ready - Admin Delete [/pages/{page_id}/admins/{admin_id}]
+
+### /pages/{page_id}/admins/{admin_id} [DELETE]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+        }
+        
+
+## Ready - Templates [/pages/{page_id}/templates]
+
+### /pages/{page_id}/templates [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": '',
+            "templates": [{
+                "uid": 123,
+                "name": "Name",
+                "type": "welcome",
+                "downloads": 130,
+                "share_code": "G34dse",
+                "workflow_uid": 12
+            },{
+                "uid": 124,
+                "name": "Name",
+                "type": "welcome",
+                "downloads": 135,
+                "share_code": "G34dse",
+                "workflow_uid": 121
+            }]
+        }
+        
+        
+## Ready - Add Workflow to Page From Template [/pages/{page_id}/templates/import]
+
+### /pages/{page_id}/templates/import [POST]
+
++ Request (application/json)
+
+        {
+            "share_code": "G3dasf"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "workflow": {
+                "uid": 1234,
+                "name": "New Workflow Name",
+            }
+        }
+        
+        
+## Ready - Create Template from workflow [/pages/{page_id}/template]
+
+### /pages/{page_id}/template [POST]
+
++ Request (application/json)
+
+        {
+            "workflow_uid": 123
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": ""
+        }
+        
+        
+## Ready - Template Delete [/pages/{page_id}/templates/{template_id}]
+
+### /pages/{page_id}/templates/{template_id} [DELETE]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+
+## Ready - Tags [/pages/{page_id}/tags]
+
+### /pages/{page_id}/tags [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        [
+            {"uid": 21, "value": "Hello"}
+        ],
+       
+
+## Ready - Tag Add [/pages/{page_id}/tags/]
+
+### /pages/{page_id}/tags [POST]
+
++ Request (application/json)
+
+        {
+            "value": "New Tag"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "uid": 312
+        }
+        
+        
+## Ready - Tag Delete [/pages/{page_id}/tags/{tag_id}]
+
+### /pages/{page_id}/tags [DELETE]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+    
+## Ready - Subscribers [/pages/{page_id}/subscribers?per_page=100]
+
++ Parameters
+    + per_page (required, number, `100`)
+    + page_id (required, number, `142`)
+
+### /pages/{page_id}/subscribers [GET]
+
+Get subscribers for a page
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+    {
+        "data": [
+            {
+                "uid": 2503,
+                "psid": "2187922667908805",
+                "page_uid": 1569,
+                "email": null,
+                "phone": null,
+                "location": null,
+                "first_name": "Leszek",
+                "last_name": "Eljasz",
+                "gender": "male",
+                "locale": "en_US",
+                "timezone": "2",
+                "profile_pic_url": "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=2187922667908805&width=1024&ext=1543028866&hash=AeTjs8RQ8VB-fA2z",
+                "messages_read": 1,
+                "messages_sent": 0,
+                "total_clicks": 0,
+                "pause_subscriptions_until_utc": "2018-10-25 03:07:46.437359",
+                "last_engagement_utc": "2018-11-01 01:58:05",
+                "last_subscriber_action_utc": "2018-10-25 17:59:43.764741",
+                "created_at_utc": "2018-10-25 03:07:46",
+                "updated_at_utc": "2018-10-25 03:07:46",
+                "is_subscribed": 1
+            }
+        ],
+        "links": {
+            "first": "http://api/api/v1/pages/1569/subscribers?page=1",
+            "last": "http://api/api/v1/pages/1569/subscribers?page=2",
+            "prev": "http://api/api/v1/pages/1569/subscribers?page=1",
+            "next": null
+        },
+        "meta": {
+            "current_page": 2,
+            "from": 2,
+            "last_page": 2,
+            "path": "http://api/api/v1/pages/1569/subscribers",
+            "per_page": 1,
+            "to": 2,
+            "total": 2
+        }
+    }
+        
+        
+## Ready - Export Subscribers [/pages/{page_id}/subscribers/export]
+
++ Parameters
+    + page_id (required, number, `142`)
+
+### /pages/{page_id}/subscribers/export [GET]
+
+Get export subscribers for a page
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        [{
+            "uid": 4206,
+            "first_name": "Burrell",
+            "gender": "male",
+            "last_name": "Bazinet",
+            "email": "subscriber@gmail.com",
+            "phone": "523-231-3212",
+            "location": "27.9169852,-82.5171886",
+            "psid": 131309812309128,
+            "tags": [
+                {"uid": 21, "value": "Hello"}
+            ]
+        },
+        {
+            "uid": 4207,
+            "first_name": "Burrell",
+            "gender": "male",
+            "last_name": "Bazinet",
+            "email": "subscriber@gmail.com",
+            "phone": "523-231-3212",
+            "location": "27.9169852,-82.5171886",
+            "psid": 1313098123091289,
+            "tags": [
+                {"uid": 21, "value": "Hello"}
+            ]
+        }]
+
+
+## Ready - Subscribers History [/pages/{page_id}/subscribers-history]
+
+### /pages/{page_id}/subscribers-history [GET]
+
++ Request (application/json)
+
+        {
+            "recent_days": 7
+        }
+        
++ Response 200 (application/json)
+
+        [
+            {
+                "date": "2018-12-10",
+                "total": 12
+            },
+            {
+                "date": "2018-12-11",
+                "total": 110
+            },
+            {
+                "date": "2018-12-12",
+                "total": 90
+            },
+            {
+                "date": "2018-12-13",
+                "total": 80
+            },
+            {
+                "date": "2018-12-14",
+                "total": 60
+            },
+            {
+                "date": "2018-12-15",
+                "total": 70
+            },
+            {
+                "date": "2018-12-16",
+                "total": 40
+            }
+        ]
+
+
+## Ready - Update Live Chat Status [/pages/{page_id}/subscribers/{subscriber_id}/live-chat]
+
+### /pages/{page_id}/subscribers/{subscriber_id}/live-chat [PATCH]
+
++ Request (application/json)
+
+        {
+            "active_status": true
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true
+        }
+
+        
+## Ready - Get Subscriber Info [/pages/{page_id}/subscribers/{subscriber_id}]
+
+### /pages/{page_id}/subscribers/{subscriber_id} [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "tags": [
+                {"uid": 21, "value": "Hello"}
+            ],
+            "campaigns": [
+               {
+                  "uid": 35,
+                  "campaign_name": "first campaign",
+                  "workflow_type": "welcomemsg",
+                  "created_at_utc": "2018-03-02"
+               },
+               {
+                  "uid": 36,
+                  "campaign_name": "second campaign",
+                  "workflow_type": "welcomemsg",
+                  "created_at_utc": "2018-03-02"
+               }
+            ],
+            "messages_sent": 2341,
+            "messages_read": 1813,
+            "total_clicks": 2066,
+            "email": "subscriber@gmail.com",
+            "phone": "523-231-3212",
+            "location": "San Francisco",
+            "chat_history": ["should return chat history"],
+            "psid": 131309812309128
+        }
+
+
+## Ready - Update Subscriber Info [/pages/{page_id}/subscribers/{subscriber_id}/]
+
+### /pages/{page_id}/subscribers/{subscriber_id} [PATCH]
+
++ Request (application/json)
+
+        {
+            "email"                   :   "updated@email.com",
+            "phone"                 :   "15623563256",
+            "location"              :   "LA",
+            "is_subscribed"         :   false,
+            "tags"                  :   [{"uid": 32, "value": "2123"}]
+        }
+
++ Response 200 (application/json)
+        
+        {
+            "success"                   :   true
+        }
+
+        
+## FanPageSubscribersPauseAutomations [/fanpage/subscriber/pauseautomations]
+
+### /fanpage/subscriber/pauseautomations [POST]
+
++ Request (application/json)
+
+        {
+            "userUid"                   :   "userUid",
+            "pause"                     :   "pause"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "page_uid"                  :   "page_uid",
+            "pause_subscriptions_until" :   "pause_subscriptions_until"
+        }
+
+
+## Ready - FanPageTriggersCreate [/pages/{page_id}/workflow-triggers]
+
+### /pages/{page_id}/workflow-triggers [POST]
+
++ Request (application/json)
+
+        {
+            "post_uid"                  :   23123,
+            "inclusion_keywords"        :   "inclusion_keywords",
+            "message"                   :   "message"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "trigger_uid"               :   1235
+        }
+        
+## Ready - PostUpdate [/pages/{page_id}/posts/{post_id}]
+
+### /pages/{page_id}/posts/{post_id} [PATCH]
+
++ Request (application/json)
+
+        {
+            "trigger":  true
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success":   true
+        }
+        
+## Ready - FanPageTriggersUpdate [/pages/{page_id}/workflow-triggers/{trigger_id}]
+
+### /pages/{page_id}/workflow-triggers/{trigger_id} [PUT]
+
++ Request (application/json)
+
+        {
+            "inclusion_keywords"        :   "updated inclusion_keywords",
+            "message"                   :   "updated message",
+            "active"                    :   true
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true
+        }
+        
+        
+## FanPageWorkflowsUpdateImage [/fanpage/workflows/updateimage]
+
+### /fanpage/workflows/updateimage [POST]
+
++ Request (application/json)
+
+        {
+            "item_uid"                  :   "item_uid",
+            "reference_id"              :   "reference_id",
+            "headline"                  :   "headline",
+            "content"                   :   "content",
+            "redirect_url"              :   "redirect_url",
+            "image"                     :   "image"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "reference_id"              :   "reference_id",
+            "uid"                       :   "uid",
+            "image_url"                 :   "image_url"
+        }
+        
+        
+## KeepAlive [/keepalive]
+
+### /keepalive [GET]
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "next_keep_alive_seconds"   :   "next_keep_alive_seconds"
+        }
+        
+## LicenseActivate [/license/activate]
+
+### /license/activate [POST]
+
++ Request (application/json)
+
+        {
+            "page_uid"                  :   "page_uid"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success"                   :   true,
+            "page_uid"                  :   "page_uid",
+            "activated_license_uid"     :   "activated_license_uid",
+            "unused_license_count"      :   "unused_license_count"
+        }
+        
+## License Count [/license/count]
+
+### /license/count  [GET]
+
+Get unused license count
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {
+            "unused_license_count"      :   "unused_license_count"
+        }
+        
+## License Price [/license/price]
+
+### /license/price [GET]
+
+Get license price
+
++ Request (application/json)
+
+        {
+            "plan_id"                   :   "plan_id",
+            "coupon_code"               :   "coupon_code"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "price"                     :   "10K"
+            "credit_card_on_file"       :   "credit_card_on_file"
+        }
+
+## Ready License Purchase [/pages/{page_uid}/license]
+
+### /pages/{page_uid}/license [POST]
+
+Purchase license
+
++ Request (application/json)
+
+        {
+            "plan"                   :   "monthly",
+            "src"                  :   "src_123123123123123",
+            "coupon"               :   "coupon_code",  // optional
+            "name"                  : "test",
+            "email"                 : "test@test.com"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "billing_info": {
+               "name": "Enterprise Account",
+                "start_date": "2019-03-08",
+                "email": "test@test.com",
+                "card_number": "1234-2323-3312-2312"
+                "price": 9700
+            }
+        }
+        
+## Ready License Cancel [/pages/{page_uid}/license]
+
+### /pages/{page_uid}/license [DELETE]
+
+Cancel license
+
++ Request (application/json)
+
+        {
+           
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+        }
+        
+## Ready License Update [/pages/{page_uid}/license]
+
+### /pages/{page_uid}/license [PATCH]
+
+Update billing details
+
++ Request (application/json)
+
+        {
+            "src": "src_12121212121",
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "billing_info": {
+               "name": "Enterprise Account",
+                "start_date": "2019-03-08",
+                "email": "test@test.com",
+                "card_number": "1234-2323-3312-2312"
+                "price": 9700
+            }
+        }
+        
+## Ready Check Coupon [/pages/{page_uid}/coupon-check]
+
+### /pages/{page_uid}/coupon-check [POST]
+
+Purchase license
+
++ Request (application/json)
+
+        {
+            "plan"                   :   "monthly",
+            "coupon"               :   "coupon_code",  // optional
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "price": 9700
+        }        
+        
+
+## Ready - Billing Info [/pages/{page_uid}/billing-info]
+
+### /pages/{page_uid}/billing-info [GET]
+
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+        {
+            "success": 1,
+            "error": 0,
+            "error_msg": "",
+            "billing_info": {
+                "name": "Enterprise Account",
+                "start_date": "2019-03-08",
+                "email": "test@test.com",
+                "card_number": "1234-2323-3312-2312"
+                "price": 9700
+            }
+        }  
+ 
+ 
+## Ready - Login [/login]
+
+### /login [POST]
+
+"chatmatic_users" table 
+
++ Request (application/json)
+        
+        {
+            "facebook_user_id"      :   "10211521353731239",
+            "facebook_long_token"   :   "EAANUolDBiKB8AE7NhyZBZAbQZCeHZBS4PoFYOe2eIL21SL1s2icHYk8VzafPkbEP98ad342CdXMC8qqpboTPYEVP4ldLRote6n3X"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "access_token" : "foiasudnf9sd7fjsdufxsdfuxsajdf",
+            "chatmatic_user_id"     :   "21",
+            "facebook_name"         :   "Lee Roder",
+            "facebook_email"        :   "lroder@sbcglobal.net",
+            "facebook_profile_image":   "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=1178648385586675&width=1024&ext=1550580568&hash=AeRJ2-FAxYYGkHZh",
+            "error" : 0,
+            "error_msg" : ''
+        }
+        
+
+## Logout [/logout]
+
+### /logout [POST]
+
++ Request (application/json)
+
+        {}
+
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "error" : 0,
+            "error_msg" : ''
+        }
+ 
+
+## SendSupportEmail [/sendsupportemail]
+
+### /sendsupportemail [POST]
+
+Send support Email
+
++ Request (application/json)
+
+        {
+            "email_subject"      :   "Help Needed!",
+            "email_body"         :   "Here's Email body"
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "success"           : true
+        }
+
+        
+## Ready - User Profile [/userprofile]
+
+### /userprofile [GET]
+
+Get user facebook_user_id, facebook_email, facebook_name
+
++ Request (application/json)
+
+        {}
+
++ Response 200 (application/json)
+
+        {
+            "success" : true,
+            "facebook_user_id": 100022805059120,
+            "facebook_email": "eric.lee6174@gmail.com"
+            "facebook_name": "Eric Lee"
+        }
+        
+## Integration Types [/integrations/types]
+
+### /integrations/types [GET]
+
+Get types of integrations available
+
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+        
+        {
+            "success" : 1,
+            "error": 0,
+            "error_msg": "",
+            "types": [
+                {
+                    "uid": 1,
+                    "name": "Webhook",
+                    "slug": "webhook",
+                    "parameters": [
+                        "webhook_url"
+                    ]
+                }
+            ]
+        }
+
+
+## Integrations - GET [/pages/{page_uid}/integrations]
+
+### /pages/{page_uid}/integrations [GET]
+
+Get a list of the currently configured integrations for a given page
+
++ Request (application/json)
+
+        {}
+
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "error" : 0,
+            "error_msg" : "",
+            "integrations": [
+                {
+                    "uid": 1,
+                    "name": "First Webhook",
+                    "integration_type_uid": 1,
+                    "page_uid": 123,
+                    "parameters": {
+                        "webhook_url": "https://www.first.com"
+                    },
+                    "active": false,
+                    "triggered": 111
+                },
+                {
+                    "uid": 2,
+                    "name": "Second Webhook",
+                    "integration_type_uid": 1,
+                    "page_uid": 123,
+                    "parameters": {
+                        "webhook_url": "https://www.second.com"
+                    },
+                    "active": false,
+                    "triggered": 222
+                }
+            ]
+        }
+
+## Integrations - Insert - POST [/pages/{page_uid}/integrations]
+
+### /pages/{page_uid}/integrations [POST]
+
+Insert a new integration
+
++ Request (application/json)
+
+        {
+            "name": "New Webhook",
+            "integration_type_uid": 1,
+            "parameters": {
+                 "webhook_url": "https://url.com"
+            },
+            "active": true,
+            "triggered": 0
+        }
+
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "error" : 0,
+            "error_msg" : "",
+            "integration": [
+                {
+                    "uid": 3,
+                    "name": "New Webhook",
+                    "integration_type_uid": 1,
+                    "parameters": {
+                        "webhook_url": "https://url.com",
+                    },
+                    "active": true,
+                    "triggered": 222
+                }
+            ]
+        }
+
+## Integrations- Update - PUT [/pages/{page_uid}/integrations/{integration_uid}]
+
+### /pages/{page_uid}/integrations/{integration_uid} [PUT]
+
++ Request (application/json)
+
+        {
+            "name": "Update Webhook Name",
+            "parameters": {
+                "webhook_url": "https://update.url.com"
+            },
+            "active": true
+        }
+
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "error" : 0,
+            "error_msg" : '',
+            "integration": [
+                {
+                    "uid": 3,
+                    "name": "Update Webhook Name",
+                    "integration_type_uid": 1,
+                    "parameters": {
+                        "webhook_url": "https://url.com"
+                    },
+                    "active": true
+                }
+            ]
+        }
+
+## Integrations- Delete - DELETE [/pages/{page_uid}/integrations/{integration_uid}]
+
+### /pages/{page_uid}/integrations/{integration_uid} [DELETE]
+
++ Request (application/json)
+
+        {}
+
++ Response 200 (application/json)
+
+        {
+            "success" : 1,
+            "error" : 0,
+            "error_msg" : '',
+        }
+        
+## Pusher Authentication - POST [/pusher/auth]
+
+### /pusher/auth [POST]
+
++ Request (application/json)
+
+        {
+            "channel_name": 'channel name',
+            "socket_id": 12345
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "auth": 'alskdjalksdjalksdjalskdjasldaskdjaslkdj'
+        }

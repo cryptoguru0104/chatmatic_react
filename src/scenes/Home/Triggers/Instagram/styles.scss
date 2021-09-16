@@ -1,0 +1,52 @@
+.add-trigger {
+  padding: 1rem !important;
+
+  .trigger-aside-form {
+    width: 100%;
+    max-width: 335px;
+    height: 100%;
+    .buttonsField.left-sidebar-newo{
+      width: 100%;
+      .ui.button {
+        height: 110px;
+        .sidebar-list-img {
+          span {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .section-3 {
+      background-color: #F8F9FC;
+      margin: 1rem 0;
+      padding: 1rem 0;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #F8F9FC;
+        height: 100%;
+      }
+    }
+    &.sub-section {
+      background-color: #F8F9FC;
+      margin-left:2px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .note-section {
+      position: absolute;
+      bottom: 0;
+      img {
+        margin-top: 4px;
+        margin-right: 10px;
+      }
+    }
+  }
+  hr {
+    margin: 1rem 0;
+  }
+}

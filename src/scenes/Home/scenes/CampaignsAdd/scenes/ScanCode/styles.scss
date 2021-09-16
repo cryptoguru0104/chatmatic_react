@@ -1,0 +1,132 @@
+.scan-code-container {
+  max-width: 700px;
+  min-height: calc(100vh - 171px);
+  background-color: white;
+  border-radius: 10px;
+
+  .campaign-name-container {
+    min-height: 50px;
+    width: 100%;
+  }
+
+  .action-submit-container {
+    flex: 1;
+
+    .action-step-bar {
+      font-size: 14px;
+      min-height: 62px;
+
+      i {
+        font-size: 20px;
+        margin-top: .25rem;
+      }
+
+      .action-submit {
+        border-radius: 12px 0 0 12px;
+      }
+
+      .how-to-use {
+        border-radius: 0 12px 12px 0;
+        border: 1px solid #b1b9cc;
+      }
+    }
+
+    .message-option {
+      min-height: 32px;
+
+      input {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .message-selection {
+      flex: 1;
+
+      .alert-container {
+        border: 1px solid #b1b9cc;
+        padding: 1rem 0;
+        border-radius: 0.5rem;
+
+        .warning-alert {
+          min-height: 46px;
+
+          i {
+            font-size: 2rem;
+            color: #f02727;
+          }
+        }
+
+        .success-alert {
+          i {
+            font-size: 2rem;
+            color: #17a2b8;
+          }
+        }
+
+        .btn-edit-engagement {
+          background-color: #17a2b8;
+        }
+      }
+
+      .message-list {
+        overflow: auto;
+        border: 1px solid #b1b9cc;
+        border-radius: 0.5rem;
+        flex: 1;
+        max-height: calc(100vh - 530px);
+
+        .engage-item {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .step-nav-actions {
+      min-height: 38px;
+    }
+  }
+
+  .how-to-use-container {
+    flex: 1;
+
+    .action-step-bar {
+      font-size: 14px;
+
+      i {
+        font-size: 20px;
+        margin-top: .25rem;
+      }
+
+      .action-submit {
+        border-radius: 12px 0 0 12px;
+      }
+
+      .how-to-use {
+        border-radius: 0 12px 12px 0;
+      }
+    }
+
+    .link-container {
+      flex: 1;
+
+      i {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      a {
+        background-color: #17a2b8;
+        color: white;
+        font-size: 16px;
+      }
+    }
+  }
+}

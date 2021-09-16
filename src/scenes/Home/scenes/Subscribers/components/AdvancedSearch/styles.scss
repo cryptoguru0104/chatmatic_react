@@ -1,0 +1,72 @@
+@import 'src/constants.scss';
+
+.advanced-search-container {
+  background: $bgColor;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $bgColor transparent;
+    top: -10px;
+    right: 45px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+
+    label {
+      color: $titleColor;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .text-field {
+      border: 0px;
+      background: #fff;
+      border-radius: 8px;
+      outline: none;
+      color: $contentTextColor;
+      width: 100%;
+      height: 40px;
+      font-size: 15px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    .subscribed-date-type-selector {
+      border: 0px;
+      background: #fff;
+      border-radius: 8px;
+      outline: none;
+      color: $contentTextColor;
+      flex: 1;
+      height: 40px;
+      font-size: 15px;
+    }
+    .subscribed-date-text-field {
+      width: 150px;
+    }
+
+    .btn-reset {
+      text-transform: none;
+      height: 40px;
+    }
+    .btn-search {
+      width: 105px;
+      height: 40px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import 'src/constants.scss';
+
+.action-modal-container {
+  .action-modal-header {
+    span {
+      
+      font-size: 15px;
+      color: $titleColor;
+      line-height: 1rem;
+    }
+  }
+}

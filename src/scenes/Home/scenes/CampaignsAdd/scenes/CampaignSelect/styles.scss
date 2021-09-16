@@ -1,0 +1,50 @@
+.campaign-select-container {
+  padding: 20px 23px 30px 47px;
+  min-height: calc(100vh - 171px);
+
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #30323b;
+  }
+
+  .campaign-creator-list {
+    .btn-campaign-creator {
+      width: 140px;
+      height: 140px;
+      margin-right: 14px;
+      display: flex !important;
+      justify-content: center;
+      align-items: center !important;
+      background: transparent;
+
+      &.btn-secondary:not(:disabled):not(.disabled).active {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px 0 rgba(48, 50, 59, .15);
+
+        small {
+          color: #274BF0;
+        }
+      }
+
+      .image-container {
+        width: 100px;
+        height: 80px;
+        min-height: 80px;
+        border: 2px solid #f1f0f0;
+        border-radius: 4px;
+      }
+
+      small {
+        font-size: 10px;
+        color: #464647;
+      }
+    }
+  }
+
+  .btn-next {
+    width: 160px;
+    height: 40px;
+  }
+}

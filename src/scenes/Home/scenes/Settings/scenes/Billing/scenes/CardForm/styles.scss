@@ -1,0 +1,27 @@
+@import 'src/constants.scss';
+
+.card-form-container {
+  .MuiDialog-paper {
+    border-radius: 10px;
+  }
+  .MuiDialogContent-root {
+    padding: 30px;
+  }
+  h5 {
+    margin: 0 !important;
+  }
+  .btn-close {
+    outline: 0;
+    border: 0;
+    background: transparent;
+  }
+  hr {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    width: 520px;
+  }
+
+  .btn-submit {
+    margin-top: 35px;
+  }
+}

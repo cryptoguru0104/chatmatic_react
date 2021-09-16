@@ -1,0 +1,74 @@
+@import 'src/constants.scss';
+
+.general-container {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+
+  .page-header {
+
+    .input-group {
+      border: 0;
+      border-radius: 10px;
+
+      input {
+        border: 0;
+        border-radius: 10px;
+        background: #F3F5F9;
+      }
+
+      button {
+        outline: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .page-content {
+    flex: 1;
+
+    .user-list {
+      flex: 1;
+      max-height: 400px;
+      overflow: auto;
+
+      button {
+        color: #F64F3D;
+        border: 1px solid #F64F3D;
+        border-radius: 26px;
+        width: 26px;
+        height: 26px;
+        background: transparent;
+        &:hover {
+          color: $titleColor;
+          border: 1px solid $titleColor;
+          box-shadow: none;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .page-footer {
+    border-top: 1px solid #E6E7EB;
+    padding: 0px;
+    padding-top: 25px;
+
+    .btn-refresh {
+      border-radius: 8px;
+      border: 1px solid #DCE0E9;
+      color: $titleColor;
+      width: 192px;
+      height: 40px;
+
+      
+    }
+
+    .btn-disable-bot {
+      font-size: 14px;
+      color:$contentTextColor;
+    }
+  }
+}
